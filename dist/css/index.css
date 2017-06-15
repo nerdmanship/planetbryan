@@ -12,6 +12,9 @@ body {
   width: 100vw;
   overflow: hidden; }
 
+#scene {
+  opacity: 0; }
+
 #space {
   position: absolute;
   top: 0;
@@ -19,16 +22,10 @@ body {
   height: 100vh;
   width: 100vw;
   z-index: -1;
-  opacity: 0;
-  background: #0b1a38;
-  /* Old browsers */
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #0b1a38 0%, #0c2a44 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #0b1a38 0%, #0c2a44 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0b1a38', endColorstr='#0c2a44',GradientType=0 );
-  /* IE6-9 */ }
+  background: #02090c;
+  background: -webkit-linear-gradient(top, #02090c 0%, #011c28 100%);
+  background: linear-gradient(to bottom, #02090c 0%, #011c28 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02090c', endColorstr='#011c28',GradientType=0 ); }
 
 #planet-wrapper {
   margin: 0;
@@ -47,6 +44,3 @@ body {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%); }
-
-#planet {
-  opacity: 0; }
