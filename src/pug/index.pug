@@ -1,0 +1,14 @@
+extends ../assets/nerdmanship/pug/boiler.pug
+
+block title
+  title Nerdmanship template
+
+block stylesheets
+  +style('css/index.css')
+
+block content
+  include content
+  //- +controls("master")
+
+append foot
+  +script("js/index.js")
