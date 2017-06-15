@@ -1268,17 +1268,62 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/src\/assets\/planet.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/dist\/assets\/planet.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/src\/favicon.ico": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/dist\/favicon.ico",
 		"oF": 0
 		},
+	"\/src\/js\/config.json": {
+		"ft": 524288,
+		"oA": 2,
+		"oAP": "\/dist\/js\/config.json",
+		"oF": 3,
+		"oO": 0,
+		"oS": 0
+		},
 	"\/src\/js\/index.js": {
 		"ft": 64,
 		"mi": 0,
 		"oA": 0,
 		"oAP": "\/dist\/js\/index.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/src\/js\/particles.min.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/dist\/js\/particles.min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/src\/js\/space.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/dist\/js\/space.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/src\/js\/stats.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/dist\/js\/stats.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 1
@@ -1298,6 +1343,27 @@
 		"oAP": "\/dist\/index.html",
 		"oF": 3,
 		"oS": 0
+		},
+	"\/src\/pug\/planet.pug": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/dist\/pug\/planet.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/src\/scss\/custom.scss": {
+		"aP": 1,
+		"bl": 1,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/dist\/scss\/custom.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
 		},
 	"\/src\/scss\/index.scss": {
 		"aP": 1,
@@ -1322,7 +1388,7 @@
 	"displayValue": "template",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "meme-girlfriend",
-	"lastBuiltDate": 516289407
+	"lastBuiltDate": 519199038
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
