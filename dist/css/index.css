@@ -6,9 +6,20 @@
   padding: 30px; }
 
 body {
+  margin: 0;
+  padding: 0;
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
+  overflow: hidden; }
+
+#space {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+  opacity: 0;
   background: #0b1a38;
   /* Old browsers */
   /* FF3.6-15 */
@@ -19,14 +30,6 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0b1a38', endColorstr='#0c2a44',GradientType=0 );
   /* IE6-9 */ }
 
-#space {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  z-index: -1; }
-
 #planet-wrapper {
   margin: 0;
   padding: 0;
@@ -34,7 +37,8 @@ body {
   left: 0;
   height: 100vh;
   width: 100vw;
-  position: absolute; }
+  position: absolute;
+  overflow: hidden; }
 
 #planetbryan-artwork {
   height: 100vh;

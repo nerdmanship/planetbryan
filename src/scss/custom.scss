@@ -1,13 +1,9 @@
 body {
+  margin: 0;
+  padding: 0;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-
-  background: #0b1a38; /* Old browsers */
-  background: -moz-linear-gradient(top, #0b1a38 0%, #0c2a44 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #0b1a38 0%,#0c2a44 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #0b1a38 0%,#0c2a44 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0b1a38', endColorstr='#0c2a44',GradientType=0 ); /* IE6-9 */
 }
 
 #space {
@@ -17,6 +13,12 @@ body {
   height: 100vh;
   width: 100vw;
   z-index: -1;
+  opacity: 0;
+  background: #0b1a38; /* Old browsers */
+  background: -moz-linear-gradient(top, #0b1a38 0%, #0c2a44 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #0b1a38 0%,#0c2a44 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #0b1a38 0%,#0c2a44 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0b1a38', endColorstr='#0c2a44',GradientType=0 ); /* IE6-9 */
 }
 
 #planet-wrapper {
@@ -27,6 +29,7 @@ body {
   height: 100vh;
   width: 100vw;
   position: absolute;
+  overflow: hidden;
 }
 
 #planetbryan-artwork {
