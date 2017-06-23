@@ -1278,6 +1278,26 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/src\/assets\/planetv2.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/dist\/assets\/planetv2.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/src\/assets\/planetv3.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/dist\/assets\/planetv3.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/src\/favicon.ico": {
 		"ft": 8192,
 		"oA": 2,
@@ -1291,6 +1311,15 @@
 		"oF": 3,
 		"oO": 0,
 		"oS": 0
+		},
+	"\/src\/js\/Flame.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/dist\/js\/Flame.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 1
 		},
 	"\/src\/js\/index.js": {
 		"ft": 64,
@@ -1309,6 +1338,15 @@
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
+		},
+	"\/src\/js\/planetBryan.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/dist\/js\/planetBryan.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 1
 		},
 	"\/src\/js\/space.js": {
 		"ft": 64,
