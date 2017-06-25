@@ -24,3 +24,10 @@ function degreesToRads(degrees) {
 function radsToDegrees(rads) {
   return rads / Math.PI * 180;
 }
+
+function spread(value, range) {
+  var min = value-range;
+  var max = value+range;
+  
+  return min + Math.random() * (max - min);
+}

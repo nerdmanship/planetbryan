@@ -25,6 +25,13 @@ function radsToDegrees(rads) {
   return rads / Math.PI * 180;
 }
 
+function spread(value, range) {
+  var min = value-range;
+  var max = value+range;
+  
+  return min + Math.random() * (max - min);
+}
+
 particlesJS.load('space', 'js/config.json');
 
 javascript:(function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';document.head.appendChild(script);})()
@@ -39,7 +46,7 @@ class Flame {
     this.target.setAttribute("width", side);
     this.target.setAttribute("height", side);
     this.target.setAttribute("fill", "red");
-    this.target.setAttribute("style", "mix-blend-mode: screen;");
+    //this.target.setAttribute("style", "mix-blend-mode: screen;");
   }
 
   appendTo(parent) {
@@ -52,21 +59,24 @@ class Flame {
 
   animate() {
     var f = this.target;
+
+    // Flame settings
     var totTime = spread(12,2);
-    var timeX = [spread(1, 0.1), spread(1, 0.5), spread(1, 0.5)];
+    var timeX = [spread(1, 0.1), spread(1.5, 0.5), spread(1, 0.5)];
     var timeS = [spread(0.5, 0.25), spread(1.5, 0.75), spread(3, 1), spread(1.5, 0.5)];
-    var timeA = [spread(1.5, 0.5)];
+    var timeA = [spread(1.3, 0.2), spread(2, 0.3)];
 
     var yEase = Power1.easeOut;
 
-    var xMin = spread(50,10);
-    var xMax = random(100,120);
-    var y = [198, random(50, 125)];
+    var xMin = spread(50,5);
+    var xMax = spread(200,10);
+    var y = [197, spread(80, 25)];
     
-    var x = [spread(xMin, 1), spread(xMin, 1), spread(xMin, 3), spread(xMin, 5), spread(xMax, 100)];
-    var s = [spread(1, 0.1), spread(4, 1), spread(1, 0.5), spread(4, 1), spread(1, 0.5)];
-    var c = [ "hsl(10,65%,55%)", "hsl(40,100%,70%)", "hsl(40,0%,40%)"];
+    var x = [spread(xMin, 12), spread(xMin-3, 5), spread(xMin+3, 5), spread(xMin+5, 5), spread(xMax, 100)];
+    var s = [spread(1, 0.1), spread(3.5, 1), spread(1.3, 0.5), spread(4, 1), spread(1, 0.5)];
+    var c = [ "hsl(5, 60%, 60%)", "hsl(45, 100%, 80%)", "hsl(50,0%,40%)"];
 
+    // Sparkle settings
     if (this.sparkle) {
       // scale
       var _s = spread(0.2, 0.05);
@@ -88,14 +98,16 @@ class Flame {
       timeX = [spread(2, 0.1), spread(2, 0.5), spread(2, 0.5)];
     }
 
+    // Start settings
     TweenMax.set(f, {fill: c[0], x: x[0], y: y[0], scale: s[0], autoAlpha: 1, rotation: 45, transformOrigin: "center"});
 
+    // Timeline
     this.tl = new TimelineMax({repeat: -1, paused: true});
 
     this.tl
       .add("start")
       // Y
-      .to(f, totTime, {y: y[1], ease: yEase}, "start")
+      .to(f, totTime-0.1, {y: y[1], ease: yEase}, "start =+0.1")
       
       // X
       .to(f, timeX[0], { x: x[1], ease: Power1.easeOut}, "start")
@@ -111,21 +123,66 @@ class Flame {
 
       // COLOR
       .to(f, timeA[0], { fill: c[1], ease: Power1.easeInOut}, "start")
-      .to(f, 1, { fill: c[2], ease: Power1.easeInOut}, timeA[0])
+      .to(f, 1, { fill: c[2], ease: Power1.easeInOut}, timeA[1])
 
       // ALPHA
-      .to(f, totTime-timeA[0], { autoAlpha: 0, ease: Back.easeOut }, timeA[0])
+      .to(f, 2, { autoAlpha: 0.3, ease: Power1.easeOut }, timeA[1])
+      .to(f, 5, { autoAlpha: 0, ease: Back.easeOut }, timeA[1]+2)
       ;
-
   }
 }
 
+function flicker() {
 
-function spread(value, range) {
-  return random(value-range, value+range);
+  // Cache DOM
+  var ground = document.querySelectorAll("[data-anim=ground]"),
+  characters = document.querySelectorAll("[data-anim=character]"),
+  rockFaces = document.querySelectorAll("[data-anim=rockFace]"),
+  rockHls = document.querySelectorAll("[data-anim=rockHl]"),
+  plates = document.querySelectorAll("[data-anim=plate]");
+
+  // Define eases
+  var rough1 = RoughEase.ease.config({ template:  Power1.easeOut, strength: 1, points: 10, taper: "none", randomize:  true, clamp: true});
+  var rough2 = RoughEase.ease.config({ template:  Power1.easeOut, strength: 1, points: 10, taper: "none", randomize:  true, clamp: true});
+  var rough3 = RoughEase.ease.config({ template:  Power1.easeOut, strength: 1, points: 10, taper: "none", randomize:  true, clamp: true});
+  var rough4 = RoughEase.ease.config({ template:  Power1.easeOut, strength: 2, points: 10, taper: "none", randomize:  true, clamp: true});
+  var rough5 = RoughEase.ease.config({ template:  Power1.easeOut, strength: 2, points: 10, taper: "none", randomize:  true, clamp: true});
+  var rough6 = RoughEase.ease.config({ template:  Power1.easeOut, strength: 2, points: 10, taper: "none", randomize:  true, clamp: true});
+  
+  // Hide all
+  TweenMax.set([ground,characters,rockFaces,rockHls,plates], {autoAlpha: 0});
+
+  // Tween ground
+  TweenMax.fromTo(ground[0], 2, { autoAlpha: 0.7 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough1 });
+  TweenMax.fromTo(ground[1], 2, { autoAlpha: 0.6 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough2 });
+  TweenMax.fromTo(ground[2], 2, { autoAlpha: 0.4, scaleX: 0.95 }, { autoAlpha: 0.7, scaleX: 1, transformOrigin: "center", repeat: -1, yoyo: true, ease: rough3 });
+  TweenMax.fromTo(ground[3], 2, { autoAlpha: 0.9, scale: 0.95 }, { autoAlpha: 1, scale: 1, transformOrigin: "center", repeat: -1, yoyo: true, ease: rough1 });
+
+  // Tween characters
+  TweenMax.fromTo(characters[0], 2, { autoAlpha: 0 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough1 });
+  TweenMax.fromTo(characters[1], 2, { autoAlpha: 0 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough2 });
+
+  // Tween rock faces
+  TweenMax.fromTo(rockFaces[0], 2, { autoAlpha: 0.75 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough4 });
+  TweenMax.fromTo(rockFaces[1], 2, { autoAlpha: 0.75 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough5 });
+  TweenMax.fromTo(rockFaces[2], 2, { autoAlpha: 0.75 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough6 });
+  TweenMax.fromTo(rockFaces[3], 2, { autoAlpha: 0.75 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough4 });
+  TweenMax.fromTo(rockFaces[4], 2, { autoAlpha: 0.75 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough5 });
+
+  // Tween rock highlights
+  TweenMax.fromTo(rockHls[0], 2, { autoAlpha: 0.15 }, { autoAlpha: 0.5, repeat: -1, yoyo: true, ease: rough3 });
+  TweenMax.fromTo(rockHls[1], 2, { autoAlpha: 0.15 }, { autoAlpha: 0.5, repeat: -1, yoyo: true, ease: rough3 });
+  TweenMax.fromTo(rockHls[2], 2, { autoAlpha: 0.15 }, { autoAlpha: 0.5, repeat: -1, yoyo: true, ease: rough3 });
+  TweenMax.fromTo(rockHls[3], 2, { autoAlpha: 0.15 }, { autoAlpha: 0.5, repeat: -1, yoyo: true, ease: rough3 });
+  TweenMax.fromTo(rockHls[4], 2, { autoAlpha: 0.15 }, { autoAlpha: 0.5, repeat: -1, yoyo: true, ease: rough3 });
+
+  // Tween plate highlights
+  TweenMax.fromTo(plates[0], 2, { autoAlpha: 0.35 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough1 });
+  TweenMax.fromTo(plates[1], 2, { autoAlpha: 0.35 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough2 });
 }
 
 // @codekit-prepend "Flame.js";
+// @codekit-prepend "flicker.js";
 
 var initPlanetBryan = function() {
   // Create scene
@@ -146,8 +203,9 @@ var initPlanetBryan = function() {
 
   // Start animation
   startFire(fireplace);
+  flicker();
 
-  if (vw<5000) {
+  if (vw<500) {
     // Mobile experience
     TweenMax.set(planet, { y: 1000, x: 50, scale: 1.8 });
   } else {
@@ -163,7 +221,7 @@ function startFire(parent) {
   var fire = document.createElementNS("http://www.w3.org/2000/svg", "g");
   
   // populate
-  var count = 80;
+  var count = 60;
 
   for(var i = 0; i < count; i++) {
     var flame = new Flame();

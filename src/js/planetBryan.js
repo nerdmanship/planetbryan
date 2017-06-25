@@ -1,4 +1,5 @@
 // @codekit-prepend "Flame.js";
+// @codekit-prepend "flicker.js";
 
 var initPlanetBryan = function() {
   // Create scene
@@ -19,8 +20,9 @@ var initPlanetBryan = function() {
 
   // Start animation
   startFire(fireplace);
+  flicker();
 
-  if (vw<5000) {
+  if (vw<500) {
     // Mobile experience
     TweenMax.set(planet, { y: 1000, x: 50, scale: 1.8 });
   } else {
@@ -36,7 +38,7 @@ function startFire(parent) {
   var fire = document.createElementNS("http://www.w3.org/2000/svg", "g");
   
   // populate
-  var count = 80;
+  var count = 60;
 
   for(var i = 0; i < count; i++) {
     var flame = new Flame();
