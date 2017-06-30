@@ -224,7 +224,7 @@ function startFire(parent) {
   var fire = document.createElementNS("http://www.w3.org/2000/svg", "g");
   
   // populate
-  var count = 2;
+  var count = 60;
 
   for(var i = 0; i < count; i++) {
     var flame = new Flame();
