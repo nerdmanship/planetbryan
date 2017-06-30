@@ -20,13 +20,14 @@ var initPlanetBryan = function() {
 
   // Start animation
   startFire(fireplace);
-  flicker();
 
-  if (vw<5000) {
+  if (vw<500) {
     // Mobile experience
     TweenMax.set(planet, { y: 1000, x: 50, scale: 1.8 });
   } else {
     // Desktop experience
+    flicker();
+    particlesJS.load('space', 'js/config.json');
     TweenMax.set(planet, { y: 2100, x: 50, scale: 4 });
     TweenMax.from(planet, 20, {y: 4200, x: -1000, scale: 7, rotation: -30, ease: Back.easeOut.config(0.5)});
   }
