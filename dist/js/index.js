@@ -32,7 +32,7 @@ function spread(value, range) {
   return min + Math.random() * (max - min);
 }
 
-particlesJS.load('space', 'js/config.json');
+//particlesJS.load('space', 'js/config.json');
 
 javascript:(function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';document.head.appendChild(script);})()
 
@@ -159,8 +159,10 @@ function flicker() {
   TweenMax.fromTo(ground[3], 2, { autoAlpha: 0.9, scale: 0.95 }, { autoAlpha: 1, scale: 1, transformOrigin: "center", repeat: -1, yoyo: true, ease: rough1 });
 
   // Tween characters
-  TweenMax.fromTo(characters[0], 2, { autoAlpha: 0 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough1 });
-  TweenMax.fromTo(characters[1], 2, { autoAlpha: 0 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough2 });
+  //TweenMax.fromTo(characters[0], 2, { autoAlpha: 0 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough1 });
+  //TweenMax.fromTo(characters[1], 2, { autoAlpha: 0 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough2 });
+  TweenMax.fromTo(characters[0], 2, { autoAlpha: 1, fill: "hsl(25, 80%, 60%)" }, { autoAlpha: 1, fill: "hsl(45, 100%, 80%)", repeat: -1, yoyo: true, ease: rough1 });
+  TweenMax.fromTo(characters[1], 2, { autoAlpha: 1, fill: "hsl(25, 80%, 60%)" }, { autoAlpha: 1, fill: "hsl(45, 100%, 80%)", repeat: -1, yoyo: true, ease: rough2 });
 
   // Tween rock faces
   TweenMax.fromTo(rockFaces[0], 2, { autoAlpha: 0.75 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough4 });
@@ -205,7 +207,7 @@ var initPlanetBryan = function() {
   startFire(fireplace);
   flicker();
 
-  if (vw<500) {
+  if (vw<5000) {
     // Mobile experience
     TweenMax.set(planet, { y: 1000, x: 50, scale: 1.8 });
   } else {

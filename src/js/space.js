@@ -1,1 +1,1 @@
-particlesJS.load('space', 'js/config.json');
+//particlesJS.load('space', 'js/config.json');

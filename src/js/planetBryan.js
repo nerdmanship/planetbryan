@@ -22,7 +22,7 @@ var initPlanetBryan = function() {
   startFire(fireplace);
   flicker();
 
-  if (vw<500) {
+  if (vw<5000) {
     // Mobile experience
     TweenMax.set(planet, { y: 1000, x: 50, scale: 1.8 });
   } else {
