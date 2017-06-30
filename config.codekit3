@@ -1360,7 +1360,7 @@
 	"\/src\/js\/space.js": {
 		"ft": 64,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/dist\/js\/space.js",
 		"oF": 0,
 		"sC": 1,
@@ -1371,6 +1371,15 @@
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/dist\/js\/stats.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 1
+		},
+	"\/src\/js\/svg.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/dist\/js\/svg.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 1

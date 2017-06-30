@@ -12,9 +12,6 @@ body {
   width: 100vw;
   overflow: hidden; }
 
-#scene {
-  opacity: 0; }
-
 #space {
   position: absolute;
   top: 0;
@@ -44,6 +41,3 @@ body {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%); }
-
-.blend {
-  mix-blend-mode: screen; }
