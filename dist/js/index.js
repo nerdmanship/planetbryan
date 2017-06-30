@@ -542,17 +542,17 @@ function animateScene() {
   
   var planetBody = document.querySelector("[data-anim=planetBody]");
 
-  if (window.innerWidth < 321) {
-    TweenMax.set(planetBody, { y: 1000, x: 50, scale: 1.8, transformOrigin: "center" });
-    startFire();
-    createSpace();
-  } else {
-    TweenMax.set(planetBody, { y: 2100, x: 50, scale: 4, transformOrigin: "center" });
-    startFire();
-    flicker();
-    createSpace();
-    TweenMax.from(planetBody, 20, {y: 4200, x: -1000, scale: 7, rotation: -30, ease: Back.easeOut.config(0.5)});
+  startFire();
+  flicker();
+  createSpace();
+  
+  TweenMax.set(planetBody, { y: 1000, x: 50, scale: 1.8, transformOrigin: "center" });
+  
+  if (window.innerWidth > 321) {
+    TweenMax.set(planetBody, { y: 1900, x: 50, scale: 4, rotation: 2, transformOrigin: "center" });
+    //TweenMax.from(planetBody, 20, {y: 4200, x: -1000, scale: 7, rotation: -30, ease: Back.easeOut.config(0.5)});
   }
+
 
 }
 
