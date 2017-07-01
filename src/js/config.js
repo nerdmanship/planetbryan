@@ -79,7 +79,7 @@ function setConfig() {
   }
 
   else if (performance === "capable") {
-    
+    console.log("log");
     config.particles.number.value = 500;
     config.particles.move.enable = false;
     config.flames.count = 50;
@@ -111,7 +111,7 @@ function getClientPerformance() {
   // Verdict
   var incapable = bowser.windowsphone || bowser.samsungBrowser || bowser.tizen;
   var limited = mostHandheld;
-  var capable = iPhone6;
+  var capable = iPhone6 || bowser.firefox || bowser.safari || bowser.chrome;
   
   if (incapable) {
     return "incapable";

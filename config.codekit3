@@ -149,7 +149,7 @@
 	"\/src\/assets\/greensock\/outdated\/src\/minified\/plugins\/DrawSVGPlugin.min.js": {
 		"ft": 64,
 		"mi": 0,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/dist\/js\/DrawSVGPlugin.min.js",
 		"oF": 3,
 		"sC": 1,
@@ -185,7 +185,7 @@
 	"\/src\/assets\/greensock\/outdated\/src\/minified\/plugins\/MorphSVGPlugin.min.js": {
 		"ft": 64,
 		"mi": 0,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/dist\/js\/MorphSVGPlugin.min.js",
 		"oF": 3,
 		"sC": 1,
@@ -788,7 +788,7 @@
 	"\/src\/assets\/greensock\/src\/minified\/easing\/CustomEase.min.js": {
 		"ft": 64,
 		"mi": 0,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/dist\/js\/CustomEase.min.js",
 		"oF": 3,
 		"sC": 1,
@@ -887,7 +887,7 @@
 	"\/src\/assets\/greensock\/src\/minified\/plugins\/ModifiersPlugin.min.js": {
 		"ft": 64,
 		"mi": 0,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/dist\/js\/ModifiersPlugin.min.js",
 		"oF": 3,
 		"sC": 1,
@@ -968,7 +968,7 @@
 	"\/src\/assets\/greensock\/src\/minified\/utils\/Draggable.min.js": {
 		"ft": 64,
 		"mi": 0,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/dist\/js\/Draggable.min.js",
 		"oF": 3,
 		"sC": 1,
@@ -1289,9 +1289,9 @@
 	"\/src\/assets\/planet.svg": {
 		"ft": 2097152,
 		"miP": 0,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/dist\/assets\/planet.svg",
-		"oF": 0,
+		"oF": 1,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
@@ -1299,9 +1299,9 @@
 	"\/src\/assets\/planetv2.svg": {
 		"ft": 2097152,
 		"miP": 0,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/dist\/assets\/planetv2.svg",
-		"oF": 0,
+		"oF": 1,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
@@ -1309,9 +1309,9 @@
 	"\/src\/assets\/planetv3.svg": {
 		"ft": 2097152,
 		"miP": 0,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/dist\/assets\/planetv3.svg",
-		"oF": 0,
+		"oF": 1,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
@@ -1490,7 +1490,7 @@
 	"displayValue": "template",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "meme-girlfriend",
-	"lastBuiltDate": 520642546
+	"lastBuiltDate": 520645933
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
