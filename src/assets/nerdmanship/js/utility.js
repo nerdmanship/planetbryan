@@ -1,3 +1,9 @@
+/* 
+
+UTILITY LIBRARY
+
+*/
+
 function random(min, max) {
   if (max === null) { max = min; min = 0; }
   return min + Math.random() * (max - min);
@@ -31,3 +37,9 @@ function spread(value, range) {
   
   return min + Math.random() * (max - min);
 }
+
+/* 
+
+UTILITY LIBRARY END
+
+*/

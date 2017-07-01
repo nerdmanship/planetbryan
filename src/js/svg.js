@@ -1,11 +1,16 @@
 var svg = `<svg id="planetbryan-artwork" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1200 1200">
           <defs>
-            <symbol id="symFire" data-anim="fireplace" width="150" height="200">
-              <!--rect(width="200" height="200" stroke="teal")-->
-            </symbol>
+            ${config.flames.reflection ? '<symbol id="symFire" data-anim="fireplace" width="150" height="200"></symbol>' : ''}
             <mask id="visor-mask">
-              <path id="visor-mask-path" fill="#FFFFFF" d="M583.14 146.58c1.37.4 2.63.62 3.6.62 10.8 0 19.8-6.7 19.8-8.63 0-6.94-10.6-11.58-17.56-12.12-.9-.07-1.88-.04-2.9.08-4.2 2.24-7.4 6.35-7.4 11.04 0 3.5 1.8 6.7 4.46 9z"></path>
+              <path id="visor-mask-path" fill="url(#linearGradient-0)" d="M583.14 146.58c1.37.4 2.63.62 3.6.62 10.8 0 19.8-6.7 19.8-8.63 0-6.94-10.6-11.58-17.56-12.12-.9-.07-1.88-.04-2.9.08-4.2 2.24-7.4 6.35-7.4 11.04 0 3.5 1.8 6.7 4.46 9z"></path>
             </mask>
+            <lineargradient id="linearGradient-0" x1="20%" x2="0%" y1="0%" y2="100%">
+              <stop stop-color="#111111" offset="0%"></stop>
+              <stop stop-color="#666666" offset="25%"></stop>
+              <stop stop-color="#CCCCCC" offset="50%"></stop>
+              <stop stop-color="#FFFFFF" offset="70%"></stop>
+              <stop stop-color="#AAAAAA" offset="100%"></stop>
+            </lineargradient>
             <lineargradient id="linearGradient-1" x1="106.35%" x2="0%" y1="66.96%" y2="33.94%">
               <stop stop-color="#021117" offset="0%"></stop>
               <stop stop-color="#01080A" offset="42.24%"></stop>
@@ -155,9 +160,9 @@ var svg = `<svg id="planetbryan-artwork" xmlns="http://www.w3.org/2000/svg" view
                   <path id="face" fill="#2A2926" d="M623.3 156.53l5.52-23.37 10.76-11.14 3.75 1.68-1.7-1.12 4.6-12.92 19.4-2.08 1.67 15-.87 2.57-3.93-.5 4.8 1.95-6.93 16.57-6.73-1.73 7.77 4.62-7.35 15.4z"></path>
                   <path id="fire" data-anim="rockFace" fill="url(#linearGradient-3)" d="M31.5 1.62L42.8.42l1.66 15-.87 2.56-3.43-.43c-.58-6.8-3.65-12.63-8.67-15.93zm8.68 16.08l4.28 1.73L37.53 36l-3.63-.93c3.93-3.85 6.37-9.2 6.37-15.14 0-.76-.03-1.5-.1-2.23zm-6.96 18l5.35 3.2-7.36 15.4-16.43-2.65c6.42-2.84 11.35-5.5 12.4-7.38.75-1.35.07-2.8-1.47-4.2 2.8-.93 5.36-2.43 7.52-4.36z" transform="translate(622.845 107.167)"></path>
                   <g id="highlights" data-anim="rockHl" fill="#EFC082">
-                    <path id="highlight3" d="M662.7 124.72l4.18 2.53.4-.57z"></path>
-                    <path id="highlight2" d="M653.86 141.57l7.07 5.37.3-.95z"></path>
-                    <path id="highlight1" d="M665.56 107.6l-10.62 1.16 1.18.67z"></path>
+                    <path id="highlight3" d="M662.7 124.72l4.18 2.53.4-.57z" opacity="0.5"></path>
+                    <path id="highlight2" d="M653.86 141.57l7.07 5.37.3-.95z" opacity="0.5"></path>
+                    <path id="highlight1" d="M665.56 107.6l-10.62 1.16 1.18.67z" opacity="0.5"></path>
                   </g>
                 </g>
                 <g id="rock4">
@@ -165,8 +170,8 @@ var svg = `<svg id="planetbryan-artwork" xmlns="http://www.w3.org/2000/svg" view
                   <path id="face" fill="#3A3934" d="M571.22 152.4l-2.93-13.27 12.95-2.58-13.27 1.15-2.75-12.46 1.22-11.86 12.8-1.48 4.87 8.84s-8.04.94-7.93 1.13c.1.2 8.55 0 8.55 0l-.17 29.68-13.36.86z"></path>
                   <path id="fire" data-anim="rockFace" fill="url(#linearGradient-4)" d="M13.87 40.6l2.93-13.3-12.95-2.57 13.27 1.15 2.75-12.46-1.22-11.86L5.85.08.96 8.9S9 9.87 8.9 10.06c-.1.2-8.56 0-8.56 0L.5 39.73l13.37.86z" transform="matrix(-1 0 0 1 585.095 111.82)"></path>
                   <g id="highlights" data-anim="rockHl" fill="#EFC082">
-                    <path id="highlight2" d="M584.78 121.83l-11.08.2 11 2.04z"></path>
-                    <path id="highlight1" d="M568.37 139.17l13.6-2.73-13.07 4.85z"></path>
+                    <path id="highlight2" d="M584.78 121.83l-11.08.2 11 2.04z" opacity="0.5"></path>
+                    <path id="highlight1" d="M568.37 139.17l13.6-2.73-13.07 4.85z" opacity="0.5"></path>
                   </g>
                 </g>
                 <g id="rock3">
@@ -174,10 +179,10 @@ var svg = `<svg id="planetbryan-artwork" xmlns="http://www.w3.org/2000/svg" view
                   <path id="face" fill="#2A2926" d="M495 158.17l.56-14.2-4.27.94 2.8-2.05.97-15.02-12.58 1.1 9.62-3.1 1.75-6.03-12.52-3.04-6.68 9.23 3.7 14.8 10.23.65-12.1 2.26 4.44 15.65z"></path>
                   <path id="fire" data-anim="rockFace" fill="url(#linearGradient-5)" d="M24.37 39.92L23.2 25.75l-4.13 1.46 2.55-2.38-.88-15.02L8.4 12.4l9.17-4.24 1-6.2L5.77.5l-5.5 9.98 5.5 14.25 10.2-.6-11.72 3.72 6.3 14.98z" transform="rotate(7 -707 3946.427)"></path>
                   <g id="highlights" data-anim="rockHl" fill="#EFC082">
-                    <path id="highlight4" d="M476.75 143.85l.2 1.6 11.37-3.76z"></path>
-                    <path id="highlight3" d="M495.5 144.14l-7.1 1.3 7.12.06z"></path>
-                    <path id="highlight2" d="M495.17 129.16l-14.2.07 14.17-1.5z"></path>
-                    <path id="highlight1" d="M493.74 119.8l-12.2-3.1-3.5 4.7 3.87-3.44z"></path>
+                    <path id="highlight4" d="M476.75 143.85l.2 1.6 11.37-3.76z" opacity="0.5"></path>
+                    <path id="highlight3" d="M495.5 144.14l-7.1 1.3 7.12.06z" opacity="0.5"></path>
+                    <path id="highlight2" d="M495.17 129.16l-14.2.07 14.17-1.5z" opacity="0.5"></path>
+                    <path id="highlight1" d="M493.74 119.8l-12.2-3.1-3.5 4.7 3.87-3.44z" opacity="0.5"></path>
                   </g>
                 </g>
                 <g id="rock2">
@@ -185,12 +190,12 @@ var svg = `<svg id="planetbryan-artwork" xmlns="http://www.w3.org/2000/svg" view
                   <path id="face" fill="#2A2926" d="M441.2 172.65l-5.88-15.96h-18.5l16.97-1.38-2.7-9.44-9.98-.44h8.45l-11.97-29.88h-9.72l8.4-1.26-.78-1.82-14.44-5.02-1 16.88h4l-1.8.65 4.9 7.58h10.44l-11.58 1.08 3.46 2.5v22.59l8.12 14.95 16.77-3.58-18.17 4.46 4.92 5.6z"></path>
                   <path id="fire" data-anim="rockFace" fill="url(#linearGradient-7)" d="M46.8 65.25L40.95 49.3h-18.5L39.4 47.9l-2.68-9.44-9.98-.44h8.45L23.2 8.16H13.5l8.4-1.26-.78-1.82L6.68.06l-1 16.88h4l-1.8.65 4.9 7.58h10.44l-11.58 1.08 3.46 2.5v22.59l8.12 14.95L40 62.72 21.8 67.18l4.92 5.6z" transform="translate(394.382 107.398)"></path>
                   <g id="highlights" data-anim="rockHl" fill="#EFC082">
-                    <path id="highlight6" d="M408.2 115.58l9.44-.02.3 1.06z"></path>
-                    <path id="highlight5" d="M400.13 122.7v1.7l8.06-.6z"></path>
-                    <path id="highlight4" d="M406.2 133.65l11.35-1.05-9.12 2.82z"></path>
-                    <path id="highlight3" d="M431.04 145.87l.35 1.26-9.8-1.54z"></path>
-                    <path id="highlight2" d="M435.3 156.77l.54 1.53-13.5-1.53z"></path>
-                    <path id="highlight1" d="M416.4 174.55l13.9-2.82-12.84 4.27z"></path>
+                    <path id="highlight6" d="M408.2 115.58l9.44-.02.3 1.06z" opacity="0.5"></path>
+                    <path id="highlight5" d="M400.13 122.7v1.7l8.06-.6z" opacity="0.5"></path>
+                    <path id="highlight4" d="M406.2 133.65l11.35-1.05-9.12 2.82z" opacity="0.5"></path>
+                    <path id="highlight3" d="M431.04 145.87l.35 1.26-9.8-1.54z" opacity="0.5"></path>
+                    <path id="highlight2" d="M435.3 156.77l.54 1.53-13.5-1.53z" opacity="0.5"></path>
+                    <path id="highlight1" d="M416.4 174.55l13.9-2.82-12.84 4.27z" opacity="0.5"></path>
                   </g>
                 </g>
                 <g id="rock1">
@@ -198,11 +203,11 @@ var svg = `<svg id="planetbryan-artwork" xmlns="http://www.w3.org/2000/svg" view
                   <path id="face" fill="#3F3E39" d="M442.86 188.93l-5.28-13.75-.7.04-9.45-21.74-3.96 1.65 2.7-2.3-2.65-5.72-9.86-4.92.37 7.18 4.46 5 3.1-1.3-2.5 4.2 7.6 10.6 4.36-1.38-4.93 3.8 15.2 21.52z"></path>
                   <path id="fire" data-anim="rockFace" fill="url(#linearGradient-8)" d="M37.98 47.23L32.7 33.48l-.7.04-9.45-21.74-3.96 1.65 2.68-2.3-2.64-5.72L8.78.5l.37 7.18 4.46 5 3.12-1.3-2.5 4.2 7.6 10.6 4.36-1.38-4.93 3.8 15.2 21.52z" transform="translate(404.882 141.7)"></path>
                   <g id="highlights" data-anim="rockHl" fill="#EFC082">
-                    <path id="Path-9" d="M414.05 149.5l-.33-7.35 7.57 3.87-6.6-1.7z"></path>
-                    <path id="Path-18" d="M419.07 157.3l2.46-4.16-1.6 5.32z"></path>
-                    <path id="Path-19" d="M428.07 155.04l-.6-1.5-3.9 1.5z"></path>
-                    <path id="Path-20" d="M426.12 170.26l.9 1.2 4.12-5z"></path>
-                    <path id="Path-21" d="M437.68 175l2.56 7.9-3.1-6.78-2.54-1.1z"></path>
+                    <path id="Path-9" d="M414.05 149.5l-.33-7.35 7.57 3.87-6.6-1.7z" opacity="0.5"></path>
+                    <path id="Path-18" d="M419.07 157.3l2.46-4.16-1.6 5.32z" opacity="0.5"></path>
+                    <path id="Path-19" d="M428.07 155.04l-.6-1.5-3.9 1.5z" opacity="0.5"></path>
+                    <path id="Path-20" d="M426.12 170.26l.9 1.2 4.12-5z" opacity="0.5"></path>
+                    <path id="Path-21" d="M437.68 175l2.56 7.9-3.1-6.78-2.54-1.1z" opacity="0.5"></path>
                   </g>
                 </g>
                 <g id="bobby">
@@ -237,11 +242,7 @@ var svg = `<svg id="planetbryan-artwork" xmlns="http://www.w3.org/2000/svg" view
                     <path id="neck" fill="#304547" d="M594.4 150.9c5.46-.63 7.74-.84 8.4-3.46 0 0-1 1.84-8.92 1.84s-7.8-1.14-7.8-1.14c-.64 2.94 2.88 3.4 8.33 2.76z"></path>
                     <path id="visor" fill="url(#linearGradient-9)" d="M8.43 22.67c10.83 0 19.8-6.7 19.8-8.63 0-6.94-10.6-11.58-17.55-12.12-.9-.07-1.88-.04-2.9.08C3.6 4.24.4 8.34.4 13.04c0 3.5 1.8 6.7 4.46 9 1.37.42 2.63.63 3.6.63z" transform="translate(578.297 124.53)"></path>
                     <path id="visor_rim" fill="#101119" d="M586.73 147.2c10.82 0 19.8-6.7 19.8-8.63 0-3.72-.6 2.98-10.38 6.1-9.78 3.1-13.7 1.27-13.7 1.27.22.22.45.44.7.64 1.36.4 2.62.62 3.58.62z"></path>
-                    <g id="masked_content_visor" mask="url(#visor-mask)">
-                      <g transform="translate(625 -40) scale(-1 1)" opacity="0.5">
-                        <use xlink:href="#symFire"></use>
-                      </g>
-                    </g>
+                    ${config.flames.reflection ? '<g id="masked_content_visor" mask="url(#visor-mask)"><g transform="translate(630 -45) scale(-1 1)" opacity="0.7"><use xlink:href="#symFire"></use></g></g>' : ''}
                     <g id="hinge">
                       <path id="hinge4" fill="#456366" d="M603.3 144.52c1.48 0 4.57-3.1 4.57-6.95 0-3.84-3.1-6.95-4.57-6.95-1.5 0-.8 3.1-.8 6.95 0 3.84-.7 6.95.8 6.95z"></path>
                       <path id="hinge3" fill="#304547" d="M603.75 130.7c1.58.5 4.12 3.4 4.12 6.87 0 3.48-2.54 6.37-4.12 6.87-1-.5-.45-3.4-.45-6.87 0-3.48-.56-6.37.45-6.87z"></path>
@@ -274,9 +275,7 @@ var svg = `<svg id="planetbryan-artwork" xmlns="http://www.w3.org/2000/svg" view
                 </g>
                 <g id="bonfire">
                   <path id="base_bg" fill="#A68F74" d="M536.68 178.6l32.86-.52 4.37-7.35-3.17-.6-6.14-1.03-1.58.95-5.1-1.24-7.4.76-5.17-2.26-5.78 2.83-5.22-.32-3.4 2z"></path>
-                  <g transform="translate(502 -26)">
-                    <use xlink:href="#symFire"></use>
-                  </g>
+                  ${config.flames.reflection ? '<g transform="translate(502 -26)"><use xlink:href="#symFire"></use></g>' : '<g data-anim="fireplace" transform="translate(502 -26)"></g>'}
                   <path id="base_fg" fill="url(#linearGradient-10)" d="M.1 16.46l21.36 3.9 3.94-.27 4.4.25 3.4 1.38 3.57-1.53 5.34-1.03 2.92.82 5.8-.2 2.95.73 6.3-1 3.8.48 6.43-.7 3.16.42 3.25-.35L73.25 17l-2.03-1.6-2.8-.06-2.15-2.48-3.92-.32-1.35-2.78-2.95-.05-1.7-1.7-1.12 1.22-2.42 1.88-1.73-.5-2.83.54-2.7.73-3.56-.16-2.26-.6-2.36.87-2.92-1.37-2.38 1.05-3.25-1.1-1.53.78-2.37-.74-2.5 1.43-2.5-.98h-2.18l-2.44-.63.22-2.32-2.8 1.16-1.85 1.8-2.7.14-3.56 3.1-2.1.32z" transform="translate(517.547 162.504)"></path>
                   <path id="ridge" fill="#BFA874" d="M530.67 171.58l1.06-.43 1.23-.48.08-.02-.2 2.27 2.43.63h2.18l2.5.98 2.5-1.44 2.37.73 1.52-.78 3.25 1.1 2.37-1.05 2.92 1.37 2.35-.88 2.26.6 3.58.17 2.7-.73 2.82-.54 1.73.5 2.43-1.88.9-1 .4.07-.2 1.64-3.15 1.88-2.22-.56-3.9.6-.8.95-3.16-.56-3.17-.8-2.36 1.52-3.1-1.3-2.35.9-2.84-1.07-2.18.68-2.04-1.1-2.52 2.12-2.64-1.4-2.14-.35-3.8-.48.42-1.23z"></path>
                 </g>

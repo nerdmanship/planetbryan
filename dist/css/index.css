@@ -10,7 +10,11 @@ body {
   padding: 0;
   height: 100vh;
   width: 100vw;
-  overflow: hidden; }
+  overflow: hidden;
+  background: #02090c;
+  background: -webkit-linear-gradient(top, #02090c 0%, #011c28 100%);
+  background: linear-gradient(to bottom, #02090c 0%, #011c28 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02090c', endColorstr='#011c28',GradientType=0 ); }
 
 #space {
   position: absolute;
@@ -18,11 +22,7 @@ body {
   left: 0;
   height: 100vh;
   width: 100vw;
-  z-index: -1;
-  background: #02090c;
-  background: -webkit-linear-gradient(top, #02090c 0%, #011c28 100%);
-  background: linear-gradient(to bottom, #02090c 0%, #011c28 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02090c', endColorstr='#011c28',GradientType=0 ); }
+  z-index: -1; }
 
 #planet-wrapper {
   margin: 0;

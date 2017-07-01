@@ -1172,6 +1172,15 @@
 		"sC": 1,
 		"tS": 1
 		},
+	"\/src\/assets\/nerdmanship\/js\/bowser.min.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/dist\/assets\/nerdmanship\/js\/bowser.min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 1
+		},
 	"\/src\/assets\/nerdmanship\/js\/controls.js": {
 		"ft": 64,
 		"mi": 0,
@@ -1187,6 +1196,15 @@
 		"oA": 1,
 		"oAP": "\/dist\/assets\/nerdmanship\/js\/particles.js",
 		"oF": 1,
+		"sC": 1,
+		"tS": 1
+		},
+	"\/src\/assets\/nerdmanship\/js\/stats.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/dist\/assets\/nerdmanship\/js\/stats.js",
+		"oF": 0,
 		"sC": 1,
 		"tS": 1
 		},
@@ -1304,13 +1322,23 @@
 		"oAP": "\/dist\/favicon.ico",
 		"oF": 0
 		},
-	"\/src\/js\/config.json": {
-		"ft": 524288,
-		"oA": 2,
-		"oAP": "\/dist\/js\/config.json",
-		"oF": 3,
-		"oO": 0,
-		"oS": 0
+	"\/src\/js\/bonfire.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/dist\/js\/bonfire.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 1
+		},
+	"\/src\/js\/config.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/dist\/js\/config.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 1
 		},
 	"\/src\/js\/Flame.js": {
 		"ft": 64,
@@ -1339,6 +1367,24 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/src\/js\/intro.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/dist\/js\/intro.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 1
+		},
+	"\/src\/js\/layout.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/dist\/js\/layout.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 1
+		},
 	"\/src\/js\/particles.min.js": {
 		"ft": 64,
 		"mi": 0,
@@ -1347,6 +1393,15 @@
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
+		},
+	"\/src\/js\/planet.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/dist\/js\/planet.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 1
 		},
 	"\/src\/js\/planetBryan.js": {
 		"ft": 64,
@@ -1360,20 +1415,11 @@
 	"\/src\/js\/space.js": {
 		"ft": 64,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/dist\/js\/space.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
-		},
-	"\/src\/js\/stats.js": {
-		"ft": 64,
-		"mi": 0,
-		"oA": 1,
-		"oAP": "\/dist\/js\/stats.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 1
 		},
 	"\/src\/js\/svg.js": {
 		"ft": 64,
@@ -1444,7 +1490,7 @@
 	"displayValue": "template",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "meme-girlfriend",
-	"lastBuiltDate": 519199038
+	"lastBuiltDate": 520642546
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,

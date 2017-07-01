@@ -1,5 +1,5 @@
-function flicker() {
-
+function startFlicker() {
+  
   // Cache DOM
   var ground = document.querySelectorAll("[data-anim=ground]"),
   characters = document.querySelectorAll("[data-anim=character]"),
@@ -25,8 +25,6 @@ function flicker() {
   TweenMax.fromTo(ground[3], 2, { autoAlpha: 0.9, scale: 0.95 }, { autoAlpha: 1, scale: 1, transformOrigin: "center", repeat: -1, yoyo: true, ease: rough1 });
 
   // Tween characters
-  //TweenMax.fromTo(characters[0], 2, { autoAlpha: 0 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough1 });
-  //TweenMax.fromTo(characters[1], 2, { autoAlpha: 0 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough2 });
   TweenMax.fromTo(characters[0], 2, { autoAlpha: 1, fill: "hsl(25, 80%, 60%)" }, { autoAlpha: 1, fill: "hsl(45, 100%, 80%)", repeat: -1, yoyo: true, ease: rough1 });
   TweenMax.fromTo(characters[1], 2, { autoAlpha: 1, fill: "hsl(25, 80%, 60%)" }, { autoAlpha: 1, fill: "hsl(45, 100%, 80%)", repeat: -1, yoyo: true, ease: rough2 });
 

@@ -1,3 +1,9 @@
+/* 
+
+UTILITY LIBRARY
+
+*/
+
 function random(min, max) {
   if (max === null) { max = min; min = 0; }
   return min + Math.random() * (max - min);
@@ -32,9 +38,165 @@ function spread(value, range) {
   return min + Math.random() * (max - min);
 }
 
+/* 
+
+UTILITY LIBRARY END
+
+*/
+
+/* 
+
+STATS
+
+*/
+
 javascript:(function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';document.head.appendChild(script);})()
 
-// create sparkles
+/* 
+
+STATS END
+
+*/
+
+/*!
+ * Bowser - a browser detector
+ * https://github.com/ded/bowser
+ * MIT License | (c) Dustin Diaz 2015
+ */
+!function(e,t,n){typeof module!="undefined"&&module.exports?module.exports=n():typeof define=="function"&&define.amd?define(t,n):e[t]=n()}(this,"bowser",function(){function t(t){function n(e){var n=t.match(e);return n&&n.length>1&&n[1]||""}function r(e){var n=t.match(e);return n&&n.length>1&&n[2]||""}var i=n(/(ipod|iphone|ipad)/i).toLowerCase(),s=/like android/i.test(t),o=!s&&/android/i.test(t),u=/nexus\s*[0-6]\s*/i.test(t),a=!u&&/nexus\s*[0-9]+/i.test(t),f=/CrOS/.test(t),l=/silk/i.test(t),c=/sailfish/i.test(t),h=/tizen/i.test(t),p=/(web|hpw)os/i.test(t),d=/windows phone/i.test(t),v=/SamsungBrowser/i.test(t),m=!d&&/windows/i.test(t),g=!i&&!l&&/macintosh/i.test(t),y=!o&&!c&&!h&&!p&&/linux/i.test(t),b=n(/edge\/(\d+(\.\d+)?)/i),w=n(/version\/(\d+(\.\d+)?)/i),E=/tablet/i.test(t),S=!E&&/[^-]mobi/i.test(t),x=/xbox/i.test(t),T;/opera/i.test(t)?T={name:"Opera",opera:e,version:w||n(/(?:opera|opr|opios)[\s\/](\d+(\.\d+)?)/i)}:/opr|opios/i.test(t)?T={name:"Opera",opera:e,version:n(/(?:opr|opios)[\s\/](\d+(\.\d+)?)/i)||w}:/SamsungBrowser/i.test(t)?T={name:"Samsung Internet for Android",samsungBrowser:e,version:w||n(/(?:SamsungBrowser)[\s\/](\d+(\.\d+)?)/i)}:/coast/i.test(t)?T={name:"Opera Coast",coast:e,version:w||n(/(?:coast)[\s\/](\d+(\.\d+)?)/i)}:/yabrowser/i.test(t)?T={name:"Yandex Browser",yandexbrowser:e,version:w||n(/(?:yabrowser)[\s\/](\d+(\.\d+)?)/i)}:/ucbrowser/i.test(t)?T={name:"UC Browser",ucbrowser:e,version:n(/(?:ucbrowser)[\s\/](\d+(?:\.\d+)+)/i)}:/mxios/i.test(t)?T={name:"Maxthon",maxthon:e,version:n(/(?:mxios)[\s\/](\d+(?:\.\d+)+)/i)}:/epiphany/i.test(t)?T={name:"Epiphany",epiphany:e,version:n(/(?:epiphany)[\s\/](\d+(?:\.\d+)+)/i)}:/puffin/i.test(t)?T={name:"Puffin",puffin:e,version:n(/(?:puffin)[\s\/](\d+(?:\.\d+)?)/i)}:/sleipnir/i.test(t)?T={name:"Sleipnir",sleipnir:e,version:n(/(?:sleipnir)[\s\/](\d+(?:\.\d+)+)/i)}:/k-meleon/i.test(t)?T={name:"K-Meleon",kMeleon:e,version:n(/(?:k-meleon)[\s\/](\d+(?:\.\d+)+)/i)}:d?(T={name:"Windows Phone",windowsphone:e},b?(T.msedge=e,T.version=b):(T.msie=e,T.version=n(/iemobile\/(\d+(\.\d+)?)/i))):/msie|trident/i.test(t)?T={name:"Internet Explorer",msie:e,version:n(/(?:msie |rv:)(\d+(\.\d+)?)/i)}:f?T={name:"Chrome",chromeos:e,chromeBook:e,chrome:e,version:n(/(?:chrome|crios|crmo)\/(\d+(\.\d+)?)/i)}:/chrome.+? edge/i.test(t)?T={name:"Microsoft Edge",msedge:e,version:b}:/vivaldi/i.test(t)?T={name:"Vivaldi",vivaldi:e,version:n(/vivaldi\/(\d+(\.\d+)?)/i)||w}:c?T={name:"Sailfish",sailfish:e,version:n(/sailfish\s?browser\/(\d+(\.\d+)?)/i)}:/seamonkey\//i.test(t)?T={name:"SeaMonkey",seamonkey:e,version:n(/seamonkey\/(\d+(\.\d+)?)/i)}:/firefox|iceweasel|fxios/i.test(t)?(T={name:"Firefox",firefox:e,version:n(/(?:firefox|iceweasel|fxios)[ \/](\d+(\.\d+)?)/i)},/\((mobile|tablet);[^\)]*rv:[\d\.]+\)/i.test(t)&&(T.firefoxos=e)):l?T={name:"Amazon Silk",silk:e,version:n(/silk\/(\d+(\.\d+)?)/i)}:/phantom/i.test(t)?T={name:"PhantomJS",phantom:e,version:n(/phantomjs\/(\d+(\.\d+)?)/i)}:/slimerjs/i.test(t)?T={name:"SlimerJS",slimer:e,version:n(/slimerjs\/(\d+(\.\d+)?)/i)}:/blackberry|\bbb\d+/i.test(t)||/rim\stablet/i.test(t)?T={name:"BlackBerry",blackberry:e,version:w||n(/blackberry[\d]+\/(\d+(\.\d+)?)/i)}:p?(T={name:"WebOS",webos:e,version:w||n(/w(?:eb)?osbrowser\/(\d+(\.\d+)?)/i)},/touchpad\//i.test(t)&&(T.touchpad=e)):/bada/i.test(t)?T={name:"Bada",bada:e,version:n(/dolfin\/(\d+(\.\d+)?)/i)}:h?T={name:"Tizen",tizen:e,version:n(/(?:tizen\s?)?browser\/(\d+(\.\d+)?)/i)||w}:/qupzilla/i.test(t)?T={name:"QupZilla",qupzilla:e,version:n(/(?:qupzilla)[\s\/](\d+(?:\.\d+)+)/i)||w}:/chromium/i.test(t)?T={name:"Chromium",chromium:e,version:n(/(?:chromium)[\s\/](\d+(?:\.\d+)?)/i)||w}:/chrome|crios|crmo/i.test(t)?T={name:"Chrome",chrome:e,version:n(/(?:chrome|crios|crmo)\/(\d+(\.\d+)?)/i)}:o?T={name:"Android",version:w}:/safari|applewebkit/i.test(t)?(T={name:"Safari",safari:e},w&&(T.version=w)):i?(T={name:i=="iphone"?"iPhone":i=="ipad"?"iPad":"iPod"},w&&(T.version=w)):/googlebot/i.test(t)?T={name:"Googlebot",googlebot:e,version:n(/googlebot\/(\d+(\.\d+))/i)||w}:T={name:n(/^(.*)\/(.*) /),version:r(/^(.*)\/(.*) /)},!T.msedge&&/(apple)?webkit/i.test(t)?(/(apple)?webkit\/537\.36/i.test(t)?(T.name=T.name||"Blink",T.blink=e):(T.name=T.name||"Webkit",T.webkit=e),!T.version&&w&&(T.version=w)):!T.opera&&/gecko\//i.test(t)&&(T.name=T.name||"Gecko",T.gecko=e,T.version=T.version||n(/gecko\/(\d+(\.\d+)?)/i)),!T.windowsphone&&!T.msedge&&(o||T.silk)?T.android=e:!T.windowsphone&&!T.msedge&&i?(T[i]=e,T.ios=e):g?T.mac=e:x?T.xbox=e:m?T.windows=e:y&&(T.linux=e);var N="";T.windowsphone?N=n(/windows phone (?:os)?\s?(\d+(\.\d+)*)/i):i?(N=n(/os (\d+([_\s]\d+)*) like mac os x/i),N=N.replace(/[_\s]/g,".")):o?N=n(/android[ \/-](\d+(\.\d+)*)/i):T.webos?N=n(/(?:web|hpw)os\/(\d+(\.\d+)*)/i):T.blackberry?N=n(/rim\stablet\sos\s(\d+(\.\d+)*)/i):T.bada?N=n(/bada\/(\d+(\.\d+)*)/i):T.tizen&&(N=n(/tizen[\/\s](\d+(\.\d+)*)/i)),N&&(T.osversion=N);var C=N.split(".")[0];if(E||a||i=="ipad"||o&&(C==3||C>=4&&!S)||T.silk)T.tablet=e;else if(S||i=="iphone"||i=="ipod"||o||u||T.blackberry||T.webos||T.bada)T.mobile=e;return T.msedge||T.msie&&T.version>=10||T.yandexbrowser&&T.version>=15||T.vivaldi&&T.version>=1||T.chrome&&T.version>=20||T.samsungBrowser&&T.version>=4||T.firefox&&T.version>=20||T.safari&&T.version>=6||T.opera&&T.version>=10||T.ios&&T.osversion&&T.osversion.split(".")[0]>=6||T.blackberry&&T.version>=10.1||T.chromium&&T.version>=20?T.a=e:T.msie&&T.version<10||T.chrome&&T.version<20||T.firefox&&T.version<20||T.safari&&T.version<6||T.opera&&T.version<10||T.ios&&T.osversion&&T.osversion.split(".")[0]<6||T.chromium&&T.version<20?T.c=e:T.x=e,T}function r(e){return e.split(".").length}function i(e,t){var n=[],r;if(Array.prototype.map)return Array.prototype.map.call(e,t);for(r=0;r<e.length;r++)n.push(t(e[r]));return n}function s(e){var t=Math.max(r(e[0]),r(e[1])),n=i(e,function(e){var n=t-r(e);return e+=(new Array(n+1)).join(".0"),i(e.split("."),function(e){return(new Array(20-e.length)).join("0")+e}).reverse()});while(--t>=0){if(n[0][t]>n[1][t])return 1;if(n[0][t]!==n[1][t])return-1;if(t===0)return 0}}function o(e,r,i){var o=n;typeof r=="string"&&(i=r,r=void 0),r===void 0&&(r=!1),i&&(o=t(i));var u=""+o.version;for(var a in e)if(e.hasOwnProperty(a)&&o[a]){if(typeof e[a]!="string")throw new Error("Browser version in the minVersion map should be a string: "+a+": "+String(e));return s([u,e[a]])<0}return r}function u(e,t,n){return!o(e,t,n)}var e=!0,n=t(typeof navigator!="undefined"?navigator.userAgent||"":"");return n.test=function(e){for(var t=0;t<e.length;++t){var r=e[t];if(typeof r=="string"&&r in n)return!0}return!1},n.isUnsupportedBrowser=o,n.compareVersions=s,n.check=u,n._detect=t,n})
+
+/* 
+
+PROJECT CONFIG
+
+*/
+
+var config = {
+  "planet": {
+    "y": 2100,
+    "x": 120,
+    "scale": 4,
+  },
+  "flames": {
+    "count": 70,
+    "targets": [],
+    "height": 100,
+    "reflection": true
+  },
+  "flicker": true,
+  "intro": true,
+  "fire": true,
+  "fps": 30,
+  "particles": {
+    "number": { "value": 500 },
+    "opacity": {
+      "value": 0.65,
+      "random": true,
+      "anim": { "enable": false }
+    },
+    "size": {
+      "value": 1,
+      "random": true,
+      "anim": { "enable": false }
+    },
+    "line_linked": { "enable": false },
+    "move": {
+      "enable": true,
+      "speed": 0.3,
+      "direction": "right",
+      "random": true,
+      "straight": true,
+      "out_mode": "out"
+    }
+  },
+  "retina_detect": true
+};
+
+
+// Make changes on default
+function setConfig() {
+
+  var performance = getClientPerformance();
+
+  if (performance === "incapable") {
+
+    config.particles.number.value = 500;
+    config.particles.move.enable = false;
+    config.flames.count = 30;
+    config.flames.height = 130;
+    config.flames.reflection = false;
+    config.flicker = false;
+    config.intro = false;
+    config.fire = false;
+    config.fps = 15;
+  }
+
+  else if (performance === "limited") {
+
+    config.particles.number.value = 100;
+    config.particles.move.enable = false;
+    config.flames.count = 30;
+    config.flames.height = 130;
+    config.flames.reflection = false;
+    config.flicker = false;
+    config.intro = false;
+    config.fire = true;
+    config.fps = 15;
+
+  }
+
+  else if (performance === "capable") {
+    
+    config.particles.number.value = 500;
+    config.particles.move.enable = false;
+    config.flames.count = 50;
+    config.flames.height = 120;
+
+    config.flames.reflection = true;
+    config.flicker = true;
+    config.intro = true;
+    config.fire = true;
+    config.fps = 30;
+
+  }
+
+}
+
+function getClientPerformance() {
+
+  // BROWSERS: chrome, firefox, msie, msedge, safari, android, ios
+  // DEVICES: mobile, tablet
+  // OS: mac, windows, windowsphone, chromeos, android, ios, webos
+  // Full list of flags: https://github.com/lancedikson/bowser
+
+  // Target specific device
+  var iPhone6 = bowser.ios && bowser.mobile && window.innerWidth > 375;
+
+  // Make bundle
+  var mostHandheld = (bowser.mobile || bowser.tablet) && !(iPhone6);
+  
+  // Verdict
+  var incapable = bowser.windowsphone || bowser.samsungBrowser || bowser.tizen;
+  var limited = mostHandheld;
+  var capable = iPhone6;
+  
+  if (incapable) {
+    return "incapable";
+  } else if (limited) {
+    return "limited";
+  } else if (capable) {
+    return "capable";
+  } else {
+    return "performant";    
+  }
+
+}
+
+/* 
+
+PROJECT CONFIG END
+
+*/
 
 class Flame {
   
@@ -44,7 +206,6 @@ class Flame {
     this.target.setAttribute("width", side);
     this.target.setAttribute("height", side);
     this.target.setAttribute("fill", "red");
-    //this.target.setAttribute("style", "mix-blend-mode: screen;");
   }
 
   appendTo(parent) {
@@ -60,19 +221,44 @@ class Flame {
 
     // Flame settings
     var totTime = spread(12,2);
-    var timeX = [spread(1, 0.1), spread(1.5, 0.5), spread(1, 0.5)];
-    var timeS = [spread(0.5, 0.25), spread(1.5, 0.75), spread(3, 1), spread(1.5, 0.5)];
-    var timeA = [spread(1.3, 0.2), spread(2, 0.3)];
+    var timeX = [spread(1, 0.1), spread(1, 0.2), spread(1, 0.5)];
+    var timeS = [spread(0.3, 0.15), spread(1.2, 0.5), spread(4.5, 0.5), spread(1, 0.5)];
+    var timeC = [spread(1, 0.2), spread(2, 0.3), spread(2, 0.3)];
 
     var yEase = Power1.easeOut;
 
-    var xMin = spread(50,5);
-    var xMax = spread(200,10);
-    var y = [197, spread(80, 25)];
+    var xMin = 47;
+    var xMax = spread(70,10);
     
-    var x = [spread(xMin, 12), spread(xMin-3, 5), spread(xMin+3, 5), spread(xMin+5, 5), spread(xMax, 100)];
-    var s = [spread(1, 0.1), spread(3.5, 1), spread(1.3, 0.5), spread(4, 1), spread(1, 0.5)];
-    var c = [ "hsl(5, 60%, 60%)", "hsl(45, 100%, 80%)", "hsl(50,0%,40%)"];
+    var y = [
+              195,
+              spread(185, 1),
+              spread(180, 1),
+              spread(175, 1),
+              spread(config.flames.height, 25)
+              ];
+    
+    var x = [
+              spread(xMin, 18),
+              spread(xMin, 8),
+              spread(4, 2),
+              spread(4, 2),
+              spread(xMax+100, 40)
+              ];
+    
+    var s = [
+              0.5,
+              spread(3.5, 1),
+              spread(1, 0.3),
+              spread(4, 1),
+              spread(1, 0.5)
+              ];
+    
+    var c = [ 
+              "hsl(" + random(5,15)+ ", " + random(75,85)+ "%, 60%)",
+              "hsl(45, 100%, " + random(75,95)+ "%)", // gray
+              "hsl(45,0%,40%)" // gray
+              ];
 
     // Sparkle settings
     if (this.sparkle) {
@@ -81,15 +267,15 @@ class Flame {
       s = [_s, _s, _s, _s, _s];
 
       // fade timing
-      timeA = [spread(5.5, 0.5)];
+      timeC = [2,8];
 
       // speed rising
       yEase = Power4.easeOut;
-      y[1] = spread(50, 25);
+      y[3] = spread(config.flames.height, 25);
       
       // percieved brightness
       c[0] = "hsl(40,100%,90%)";
-      c[1] = "hsl(40,50%,50%)";
+      c[1] = "hsl("+random(20,40)+",100%,70%)";
 
       // spread width
       x = [spread(xMin, 20), spread(xMin, 20), spread(xMin, 20), spread(xMin, 20), spread(xMin, 100)];  
@@ -105,12 +291,12 @@ class Flame {
     this.tl
       .add("start")
       // Y
-      .to(f, totTime-0.1, {y: y[1], ease: yEase}, "start =+0.1")
+      .to(f, totTime-0.1, {bezier: [{y:y[1]}, {y:y[2]}, {y:y[3]}, {y:y[4]} ], ease: yEase}, "start =+0.1")
       
       // X
       .to(f, timeX[0], { x: x[1], ease: Power1.easeOut}, "start")
-      .to(f, timeX[1], { x: x[2], ease: Power1.easeInOut}, timeX[0])
-      .to(f, timeX[2], { x: x[3], ease: Power1.easeInOut}, timeX[0] + timeX[1])
+      .to(f, timeX[1], { x: "+=" + x[2], ease: Power1.easeInOut}, timeX[0])
+      .to(f, timeX[2], { x: "-=" + x[3], ease: Power1.easeInOut}, timeX[0] + timeX[1])
       .to(f, totTime-(timeX[0] + timeX[1] + timeX[2]), { x: x[4], ease: Power1.easeIn}, timeX[0] + timeX[1] + timeX[2])
 
       // SCALE
@@ -120,75 +306,29 @@ class Flame {
       .to(f, totTime-(timeS[0] + timeS[1] + timeS[2]), { scale: s[4], ease: Power1.easeOut}, timeS[0] + timeS[1] +timeS[2])
 
       // COLOR
-      .to(f, timeA[0], { fill: c[1], ease: Power1.easeInOut}, "start")
-      .to(f, 1, { fill: c[2], ease: Power1.easeInOut}, timeA[1])
+      .to(f, timeC[0], { fill: c[1], ease: Power1.easeInOut}, "start")
+      .to(f, timeC[1], { fill: c[2], ease: Power1.easeInOut}, timeS[0] + timeS[1])
 
       // ALPHA
-      .to(f, 2, { autoAlpha: 0.3, ease: Power1.easeOut }, timeA[1])
-      .to(f, 5, { autoAlpha: 0, ease: Back.easeOut }, timeA[1]+2)
+      .to(f, timeC[1], { autoAlpha: 0.2, ease: Power1.easeOut }, timeS[0] + timeS[1])
+      .to(f, totTime-(timeS[0] + timeS[1] + timeC[1]), { autoAlpha: 0, ease: Power2.easeOut }, (timeS[0] + timeS[1] + timeC[1]))
       ;
   }
 }
 
-function flicker() {
-
-  // Cache DOM
-  var ground = document.querySelectorAll("[data-anim=ground]"),
-  characters = document.querySelectorAll("[data-anim=character]"),
-  rockFaces = document.querySelectorAll("[data-anim=rockFace]"),
-  rockHls = document.querySelectorAll("[data-anim=rockHl]"),
-  plates = document.querySelectorAll("[data-anim=plate]");
-
-  // Define eases
-  var rough1 = RoughEase.ease.config({ template:  Power1.easeOut, strength: 1, points: 10, taper: "none", randomize:  true, clamp: true});
-  var rough2 = RoughEase.ease.config({ template:  Power1.easeOut, strength: 1, points: 10, taper: "none", randomize:  true, clamp: true});
-  var rough3 = RoughEase.ease.config({ template:  Power1.easeOut, strength: 1, points: 10, taper: "none", randomize:  true, clamp: true});
-  var rough4 = RoughEase.ease.config({ template:  Power1.easeOut, strength: 2, points: 10, taper: "none", randomize:  true, clamp: true});
-  var rough5 = RoughEase.ease.config({ template:  Power1.easeOut, strength: 2, points: 10, taper: "none", randomize:  true, clamp: true});
-  var rough6 = RoughEase.ease.config({ template:  Power1.easeOut, strength: 2, points: 10, taper: "none", randomize:  true, clamp: true});
-  
-  // Hide all
-  TweenMax.set([ground,characters,rockFaces,rockHls,plates], {autoAlpha: 0});
-
-  // Tween ground
-  TweenMax.fromTo(ground[0], 2, { autoAlpha: 0.7 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough1 });
-  TweenMax.fromTo(ground[1], 2, { autoAlpha: 0.6 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough2 });
-  TweenMax.fromTo(ground[2], 2, { autoAlpha: 0.4, scaleX: 0.95 }, { autoAlpha: 0.7, scaleX: 1, transformOrigin: "center", repeat: -1, yoyo: true, ease: rough3 });
-  TweenMax.fromTo(ground[3], 2, { autoAlpha: 0.9, scale: 0.95 }, { autoAlpha: 1, scale: 1, transformOrigin: "center", repeat: -1, yoyo: true, ease: rough1 });
-
-  // Tween characters
-  //TweenMax.fromTo(characters[0], 2, { autoAlpha: 0 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough1 });
-  //TweenMax.fromTo(characters[1], 2, { autoAlpha: 0 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough2 });
-  TweenMax.fromTo(characters[0], 2, { autoAlpha: 1, fill: "hsl(25, 80%, 60%)" }, { autoAlpha: 1, fill: "hsl(45, 100%, 80%)", repeat: -1, yoyo: true, ease: rough1 });
-  TweenMax.fromTo(characters[1], 2, { autoAlpha: 1, fill: "hsl(25, 80%, 60%)" }, { autoAlpha: 1, fill: "hsl(45, 100%, 80%)", repeat: -1, yoyo: true, ease: rough2 });
-
-  // Tween rock faces
-  TweenMax.fromTo(rockFaces[0], 2, { autoAlpha: 0.75 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough4 });
-  TweenMax.fromTo(rockFaces[1], 2, { autoAlpha: 0.75 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough5 });
-  TweenMax.fromTo(rockFaces[2], 2, { autoAlpha: 0.75 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough6 });
-  TweenMax.fromTo(rockFaces[3], 2, { autoAlpha: 0.75 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough4 });
-  TweenMax.fromTo(rockFaces[4], 2, { autoAlpha: 0.75 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough5 });
-
-  // Tween rock highlights
-  TweenMax.fromTo(rockHls[0], 2, { autoAlpha: 0.15 }, { autoAlpha: 0.5, repeat: -1, yoyo: true, ease: rough3 });
-  TweenMax.fromTo(rockHls[1], 2, { autoAlpha: 0.15 }, { autoAlpha: 0.5, repeat: -1, yoyo: true, ease: rough3 });
-  TweenMax.fromTo(rockHls[2], 2, { autoAlpha: 0.15 }, { autoAlpha: 0.5, repeat: -1, yoyo: true, ease: rough3 });
-  TweenMax.fromTo(rockHls[3], 2, { autoAlpha: 0.15 }, { autoAlpha: 0.5, repeat: -1, yoyo: true, ease: rough3 });
-  TweenMax.fromTo(rockHls[4], 2, { autoAlpha: 0.15 }, { autoAlpha: 0.5, repeat: -1, yoyo: true, ease: rough3 });
-
-  // Tween plate highlights
-  TweenMax.fromTo(plates[0], 2, { autoAlpha: 0.35 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough1 });
-  TweenMax.fromTo(plates[1], 2, { autoAlpha: 0.35 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough2 });
-}
-
 var svg = `<svg id="planetbryan-artwork" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1200 1200">
           <defs>
-            <symbol id="symFire" data-anim="fireplace" width="150" height="200">
-              <!--rect(width="200" height="200" stroke="teal")-->
-            </symbol>
+            ${config.flames.reflection ? '<symbol id="symFire" data-anim="fireplace" width="150" height="200"></symbol>' : ''}
             <mask id="visor-mask">
-              <path id="visor-mask-path" fill="#FFFFFF" d="M583.14 146.58c1.37.4 2.63.62 3.6.62 10.8 0 19.8-6.7 19.8-8.63 0-6.94-10.6-11.58-17.56-12.12-.9-.07-1.88-.04-2.9.08-4.2 2.24-7.4 6.35-7.4 11.04 0 3.5 1.8 6.7 4.46 9z"></path>
+              <path id="visor-mask-path" fill="url(#linearGradient-0)" d="M583.14 146.58c1.37.4 2.63.62 3.6.62 10.8 0 19.8-6.7 19.8-8.63 0-6.94-10.6-11.58-17.56-12.12-.9-.07-1.88-.04-2.9.08-4.2 2.24-7.4 6.35-7.4 11.04 0 3.5 1.8 6.7 4.46 9z"></path>
             </mask>
+            <lineargradient id="linearGradient-0" x1="20%" x2="0%" y1="0%" y2="100%">
+              <stop stop-color="#111111" offset="0%"></stop>
+              <stop stop-color="#666666" offset="25%"></stop>
+              <stop stop-color="#CCCCCC" offset="50%"></stop>
+              <stop stop-color="#FFFFFF" offset="70%"></stop>
+              <stop stop-color="#AAAAAA" offset="100%"></stop>
+            </lineargradient>
             <lineargradient id="linearGradient-1" x1="106.35%" x2="0%" y1="66.96%" y2="33.94%">
               <stop stop-color="#021117" offset="0%"></stop>
               <stop stop-color="#01080A" offset="42.24%"></stop>
@@ -338,9 +478,9 @@ var svg = `<svg id="planetbryan-artwork" xmlns="http://www.w3.org/2000/svg" view
                   <path id="face" fill="#2A2926" d="M623.3 156.53l5.52-23.37 10.76-11.14 3.75 1.68-1.7-1.12 4.6-12.92 19.4-2.08 1.67 15-.87 2.57-3.93-.5 4.8 1.95-6.93 16.57-6.73-1.73 7.77 4.62-7.35 15.4z"></path>
                   <path id="fire" data-anim="rockFace" fill="url(#linearGradient-3)" d="M31.5 1.62L42.8.42l1.66 15-.87 2.56-3.43-.43c-.58-6.8-3.65-12.63-8.67-15.93zm8.68 16.08l4.28 1.73L37.53 36l-3.63-.93c3.93-3.85 6.37-9.2 6.37-15.14 0-.76-.03-1.5-.1-2.23zm-6.96 18l5.35 3.2-7.36 15.4-16.43-2.65c6.42-2.84 11.35-5.5 12.4-7.38.75-1.35.07-2.8-1.47-4.2 2.8-.93 5.36-2.43 7.52-4.36z" transform="translate(622.845 107.167)"></path>
                   <g id="highlights" data-anim="rockHl" fill="#EFC082">
-                    <path id="highlight3" d="M662.7 124.72l4.18 2.53.4-.57z"></path>
-                    <path id="highlight2" d="M653.86 141.57l7.07 5.37.3-.95z"></path>
-                    <path id="highlight1" d="M665.56 107.6l-10.62 1.16 1.18.67z"></path>
+                    <path id="highlight3" d="M662.7 124.72l4.18 2.53.4-.57z" opacity="0.5"></path>
+                    <path id="highlight2" d="M653.86 141.57l7.07 5.37.3-.95z" opacity="0.5"></path>
+                    <path id="highlight1" d="M665.56 107.6l-10.62 1.16 1.18.67z" opacity="0.5"></path>
                   </g>
                 </g>
                 <g id="rock4">
@@ -348,8 +488,8 @@ var svg = `<svg id="planetbryan-artwork" xmlns="http://www.w3.org/2000/svg" view
                   <path id="face" fill="#3A3934" d="M571.22 152.4l-2.93-13.27 12.95-2.58-13.27 1.15-2.75-12.46 1.22-11.86 12.8-1.48 4.87 8.84s-8.04.94-7.93 1.13c.1.2 8.55 0 8.55 0l-.17 29.68-13.36.86z"></path>
                   <path id="fire" data-anim="rockFace" fill="url(#linearGradient-4)" d="M13.87 40.6l2.93-13.3-12.95-2.57 13.27 1.15 2.75-12.46-1.22-11.86L5.85.08.96 8.9S9 9.87 8.9 10.06c-.1.2-8.56 0-8.56 0L.5 39.73l13.37.86z" transform="matrix(-1 0 0 1 585.095 111.82)"></path>
                   <g id="highlights" data-anim="rockHl" fill="#EFC082">
-                    <path id="highlight2" d="M584.78 121.83l-11.08.2 11 2.04z"></path>
-                    <path id="highlight1" d="M568.37 139.17l13.6-2.73-13.07 4.85z"></path>
+                    <path id="highlight2" d="M584.78 121.83l-11.08.2 11 2.04z" opacity="0.5"></path>
+                    <path id="highlight1" d="M568.37 139.17l13.6-2.73-13.07 4.85z" opacity="0.5"></path>
                   </g>
                 </g>
                 <g id="rock3">
@@ -357,10 +497,10 @@ var svg = `<svg id="planetbryan-artwork" xmlns="http://www.w3.org/2000/svg" view
                   <path id="face" fill="#2A2926" d="M495 158.17l.56-14.2-4.27.94 2.8-2.05.97-15.02-12.58 1.1 9.62-3.1 1.75-6.03-12.52-3.04-6.68 9.23 3.7 14.8 10.23.65-12.1 2.26 4.44 15.65z"></path>
                   <path id="fire" data-anim="rockFace" fill="url(#linearGradient-5)" d="M24.37 39.92L23.2 25.75l-4.13 1.46 2.55-2.38-.88-15.02L8.4 12.4l9.17-4.24 1-6.2L5.77.5l-5.5 9.98 5.5 14.25 10.2-.6-11.72 3.72 6.3 14.98z" transform="rotate(7 -707 3946.427)"></path>
                   <g id="highlights" data-anim="rockHl" fill="#EFC082">
-                    <path id="highlight4" d="M476.75 143.85l.2 1.6 11.37-3.76z"></path>
-                    <path id="highlight3" d="M495.5 144.14l-7.1 1.3 7.12.06z"></path>
-                    <path id="highlight2" d="M495.17 129.16l-14.2.07 14.17-1.5z"></path>
-                    <path id="highlight1" d="M493.74 119.8l-12.2-3.1-3.5 4.7 3.87-3.44z"></path>
+                    <path id="highlight4" d="M476.75 143.85l.2 1.6 11.37-3.76z" opacity="0.5"></path>
+                    <path id="highlight3" d="M495.5 144.14l-7.1 1.3 7.12.06z" opacity="0.5"></path>
+                    <path id="highlight2" d="M495.17 129.16l-14.2.07 14.17-1.5z" opacity="0.5"></path>
+                    <path id="highlight1" d="M493.74 119.8l-12.2-3.1-3.5 4.7 3.87-3.44z" opacity="0.5"></path>
                   </g>
                 </g>
                 <g id="rock2">
@@ -368,12 +508,12 @@ var svg = `<svg id="planetbryan-artwork" xmlns="http://www.w3.org/2000/svg" view
                   <path id="face" fill="#2A2926" d="M441.2 172.65l-5.88-15.96h-18.5l16.97-1.38-2.7-9.44-9.98-.44h8.45l-11.97-29.88h-9.72l8.4-1.26-.78-1.82-14.44-5.02-1 16.88h4l-1.8.65 4.9 7.58h10.44l-11.58 1.08 3.46 2.5v22.59l8.12 14.95 16.77-3.58-18.17 4.46 4.92 5.6z"></path>
                   <path id="fire" data-anim="rockFace" fill="url(#linearGradient-7)" d="M46.8 65.25L40.95 49.3h-18.5L39.4 47.9l-2.68-9.44-9.98-.44h8.45L23.2 8.16H13.5l8.4-1.26-.78-1.82L6.68.06l-1 16.88h4l-1.8.65 4.9 7.58h10.44l-11.58 1.08 3.46 2.5v22.59l8.12 14.95L40 62.72 21.8 67.18l4.92 5.6z" transform="translate(394.382 107.398)"></path>
                   <g id="highlights" data-anim="rockHl" fill="#EFC082">
-                    <path id="highlight6" d="M408.2 115.58l9.44-.02.3 1.06z"></path>
-                    <path id="highlight5" d="M400.13 122.7v1.7l8.06-.6z"></path>
-                    <path id="highlight4" d="M406.2 133.65l11.35-1.05-9.12 2.82z"></path>
-                    <path id="highlight3" d="M431.04 145.87l.35 1.26-9.8-1.54z"></path>
-                    <path id="highlight2" d="M435.3 156.77l.54 1.53-13.5-1.53z"></path>
-                    <path id="highlight1" d="M416.4 174.55l13.9-2.82-12.84 4.27z"></path>
+                    <path id="highlight6" d="M408.2 115.58l9.44-.02.3 1.06z" opacity="0.5"></path>
+                    <path id="highlight5" d="M400.13 122.7v1.7l8.06-.6z" opacity="0.5"></path>
+                    <path id="highlight4" d="M406.2 133.65l11.35-1.05-9.12 2.82z" opacity="0.5"></path>
+                    <path id="highlight3" d="M431.04 145.87l.35 1.26-9.8-1.54z" opacity="0.5"></path>
+                    <path id="highlight2" d="M435.3 156.77l.54 1.53-13.5-1.53z" opacity="0.5"></path>
+                    <path id="highlight1" d="M416.4 174.55l13.9-2.82-12.84 4.27z" opacity="0.5"></path>
                   </g>
                 </g>
                 <g id="rock1">
@@ -381,11 +521,11 @@ var svg = `<svg id="planetbryan-artwork" xmlns="http://www.w3.org/2000/svg" view
                   <path id="face" fill="#3F3E39" d="M442.86 188.93l-5.28-13.75-.7.04-9.45-21.74-3.96 1.65 2.7-2.3-2.65-5.72-9.86-4.92.37 7.18 4.46 5 3.1-1.3-2.5 4.2 7.6 10.6 4.36-1.38-4.93 3.8 15.2 21.52z"></path>
                   <path id="fire" data-anim="rockFace" fill="url(#linearGradient-8)" d="M37.98 47.23L32.7 33.48l-.7.04-9.45-21.74-3.96 1.65 2.68-2.3-2.64-5.72L8.78.5l.37 7.18 4.46 5 3.12-1.3-2.5 4.2 7.6 10.6 4.36-1.38-4.93 3.8 15.2 21.52z" transform="translate(404.882 141.7)"></path>
                   <g id="highlights" data-anim="rockHl" fill="#EFC082">
-                    <path id="Path-9" d="M414.05 149.5l-.33-7.35 7.57 3.87-6.6-1.7z"></path>
-                    <path id="Path-18" d="M419.07 157.3l2.46-4.16-1.6 5.32z"></path>
-                    <path id="Path-19" d="M428.07 155.04l-.6-1.5-3.9 1.5z"></path>
-                    <path id="Path-20" d="M426.12 170.26l.9 1.2 4.12-5z"></path>
-                    <path id="Path-21" d="M437.68 175l2.56 7.9-3.1-6.78-2.54-1.1z"></path>
+                    <path id="Path-9" d="M414.05 149.5l-.33-7.35 7.57 3.87-6.6-1.7z" opacity="0.5"></path>
+                    <path id="Path-18" d="M419.07 157.3l2.46-4.16-1.6 5.32z" opacity="0.5"></path>
+                    <path id="Path-19" d="M428.07 155.04l-.6-1.5-3.9 1.5z" opacity="0.5"></path>
+                    <path id="Path-20" d="M426.12 170.26l.9 1.2 4.12-5z" opacity="0.5"></path>
+                    <path id="Path-21" d="M437.68 175l2.56 7.9-3.1-6.78-2.54-1.1z" opacity="0.5"></path>
                   </g>
                 </g>
                 <g id="bobby">
@@ -420,11 +560,7 @@ var svg = `<svg id="planetbryan-artwork" xmlns="http://www.w3.org/2000/svg" view
                     <path id="neck" fill="#304547" d="M594.4 150.9c5.46-.63 7.74-.84 8.4-3.46 0 0-1 1.84-8.92 1.84s-7.8-1.14-7.8-1.14c-.64 2.94 2.88 3.4 8.33 2.76z"></path>
                     <path id="visor" fill="url(#linearGradient-9)" d="M8.43 22.67c10.83 0 19.8-6.7 19.8-8.63 0-6.94-10.6-11.58-17.55-12.12-.9-.07-1.88-.04-2.9.08C3.6 4.24.4 8.34.4 13.04c0 3.5 1.8 6.7 4.46 9 1.37.42 2.63.63 3.6.63z" transform="translate(578.297 124.53)"></path>
                     <path id="visor_rim" fill="#101119" d="M586.73 147.2c10.82 0 19.8-6.7 19.8-8.63 0-3.72-.6 2.98-10.38 6.1-9.78 3.1-13.7 1.27-13.7 1.27.22.22.45.44.7.64 1.36.4 2.62.62 3.58.62z"></path>
-                    <g id="masked_content_visor" mask="url(#visor-mask)">
-                      <g transform="translate(625 -40) scale(-1 1)" opacity="0.5">
-                        <use xlink:href="#symFire"></use>
-                      </g>
-                    </g>
+                    ${config.flames.reflection ? '<g id="masked_content_visor" mask="url(#visor-mask)"><g transform="translate(630 -45) scale(-1 1)" opacity="0.7"><use xlink:href="#symFire"></use></g></g>' : ''}
                     <g id="hinge">
                       <path id="hinge4" fill="#456366" d="M603.3 144.52c1.48 0 4.57-3.1 4.57-6.95 0-3.84-3.1-6.95-4.57-6.95-1.5 0-.8 3.1-.8 6.95 0 3.84-.7 6.95.8 6.95z"></path>
                       <path id="hinge3" fill="#304547" d="M603.75 130.7c1.58.5 4.12 3.4 4.12 6.87 0 3.48-2.54 6.37-4.12 6.87-1-.5-.45-3.4-.45-6.87 0-3.48-.56-6.37.45-6.87z"></path>
@@ -457,9 +593,7 @@ var svg = `<svg id="planetbryan-artwork" xmlns="http://www.w3.org/2000/svg" view
                 </g>
                 <g id="bonfire">
                   <path id="base_bg" fill="#A68F74" d="M536.68 178.6l32.86-.52 4.37-7.35-3.17-.6-6.14-1.03-1.58.95-5.1-1.24-7.4.76-5.17-2.26-5.78 2.83-5.22-.32-3.4 2z"></path>
-                  <g transform="translate(502 -26)">
-                    <use xlink:href="#symFire"></use>
-                  </g>
+                  ${config.flames.reflection ? '<g transform="translate(502 -26)"><use xlink:href="#symFire"></use></g>' : '<g data-anim="fireplace" transform="translate(502 -26)"></g>'}
                   <path id="base_fg" fill="url(#linearGradient-10)" d="M.1 16.46l21.36 3.9 3.94-.27 4.4.25 3.4 1.38 3.57-1.53 5.34-1.03 2.92.82 5.8-.2 2.95.73 6.3-1 3.8.48 6.43-.7 3.16.42 3.25-.35L73.25 17l-2.03-1.6-2.8-.06-2.15-2.48-3.92-.32-1.35-2.78-2.95-.05-1.7-1.7-1.12 1.22-2.42 1.88-1.73-.5-2.83.54-2.7.73-3.56-.16-2.26-.6-2.36.87-2.92-1.37-2.38 1.05-3.25-1.1-1.53.78-2.37-.74-2.5 1.43-2.5-.98h-2.18l-2.44-.63.22-2.32-2.8 1.16-1.85 1.8-2.7.14-3.56 3.1-2.1.32z" transform="translate(517.547 162.504)"></path>
                   <path id="ridge" fill="#BFA874" d="M530.67 171.58l1.06-.43 1.23-.48.08-.02-.2 2.27 2.43.63h2.18l2.5.98 2.5-1.44 2.37.73 1.52-.78 3.25 1.1 2.37-1.05 2.92 1.37 2.35-.88 2.26.6 3.58.17 2.7-.73 2.82-.54 1.73.5 2.43-1.88.9-1 .4.07-.2 1.64-3.15 1.88-2.22-.56-3.9.6-.8.95-3.16-.56-3.17-.8-2.36 1.52-3.1-1.3-2.35.9-2.84-1.07-2.18.68-2.04-1.1-2.52 2.12-2.64-1.4-2.14-.35-3.8-.48.42-1.23z"></path>
                 </g>
@@ -512,79 +646,191 @@ var svg = `<svg id="planetbryan-artwork" xmlns="http://www.w3.org/2000/svg" view
           </g>
         </svg>`
 
-// @codekit-prepend "Flame.js";
-// @codekit-prepend "flicker.js";
-// @codekit-prepend "svg.js";
-
-var initPlanetBryan = function(id) {
-  buildSceneIn(id);
-  animateScene();
-};
-
-function buildSceneIn(id) {
-  var container = document.querySelector("#" + id);
-
+// SPACE
+function createSpace(container) {
   // Create and insert #space
   var spaceWrapper = document.createElement("div");
   spaceWrapper.setAttribute("id", "space");
   container.appendChild(spaceWrapper);
+  // Init particles
+  particlesJS('space', config);
+}
 
-  // Create and insert #planet-wrapper
+function setLayout() {
+  if (window.innerWidth < 376) {
+    config.planet.x = 70;
+    config.planet.y = 1100;
+    config.planet.scale = 1.8;
+  } else if (window.innerWidth < 376 && bowser.ios && bowser.tablet) {
+    config.planet.y = 1950;
+  }
+}
+
+/* 
+
+INTRO
+
+*/
+
+function playIntro() {
+  var planetBody = document.querySelector("[data-anim=planetBody]");
+  TweenMax.from(planetBody, 20, {y: 5200, x: -3500, scale: 10, rotation: -30, ease: Back.easeOut.config(0.5)});
+}
+
+// INTRO END
+
+function createPlanet(container) {
+    // Create and insert #planet-wrapper
   var planetWrapper = document.createElement("div");
   planetWrapper.setAttribute("id", "planet-wrapper");
   container.appendChild(planetWrapper);
 
   // Append SVG in #planet-wrapper
   planetWrapper.insertAdjacentHTML("beforeend", svg);
-}
 
-function animateScene() {
-  
   var planetBody = document.querySelector("[data-anim=planetBody]");
-
-  startFire();
-  flicker();
-  createSpace();
-  
-  TweenMax.set(planetBody, { y: 1000, x: 50, scale: 1.8, transformOrigin: "center" });
-  
-  if (window.innerWidth > 321) {
-    TweenMax.set(planetBody, { y: 1900, x: 50, scale: 4, rotation: 2, transformOrigin: "center" });
-    //TweenMax.from(planetBody, 20, {y: 4200, x: -1000, scale: 7, rotation: -30, ease: Back.easeOut.config(0.5)});
-  }
-
-
+  TweenMax.set(planetBody, { y: config.planet.y, x: config.planet.x, rotation: 2, scale: config.planet.scale, transformOrigin: "center" });
 }
 
+function startFlicker() {
+  
+  // Cache DOM
+  var ground = document.querySelectorAll("[data-anim=ground]"),
+  characters = document.querySelectorAll("[data-anim=character]"),
+  rockFaces = document.querySelectorAll("[data-anim=rockFace]"),
+  rockHls = document.querySelectorAll("[data-anim=rockHl]"),
+  plates = document.querySelectorAll("[data-anim=plate]");
 
-function startFire() {
+  // Define eases
+  var rough1 = RoughEase.ease.config({ template:  Power1.easeOut, strength: 1, points: 10, taper: "none", randomize:  true, clamp: true});
+  var rough2 = RoughEase.ease.config({ template:  Power1.easeOut, strength: 1, points: 10, taper: "none", randomize:  true, clamp: true});
+  var rough3 = RoughEase.ease.config({ template:  Power1.easeOut, strength: 1, points: 10, taper: "none", randomize:  true, clamp: true});
+  var rough4 = RoughEase.ease.config({ template:  Power1.easeOut, strength: 2, points: 10, taper: "none", randomize:  true, clamp: true});
+  var rough5 = RoughEase.ease.config({ template:  Power1.easeOut, strength: 2, points: 10, taper: "none", randomize:  true, clamp: true});
+  var rough6 = RoughEase.ease.config({ template:  Power1.easeOut, strength: 2, points: 10, taper: "none", randomize:  true, clamp: true});
+  
+  // Hide all
+  TweenMax.set([ground,characters,rockFaces,rockHls,plates], {autoAlpha: 0});
+
+  // Tween ground
+  TweenMax.fromTo(ground[0], 2, { autoAlpha: 0.7 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough1 });
+  TweenMax.fromTo(ground[1], 2, { autoAlpha: 0.6 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough2 });
+  TweenMax.fromTo(ground[2], 2, { autoAlpha: 0.4, scaleX: 0.95 }, { autoAlpha: 0.7, scaleX: 1, transformOrigin: "center", repeat: -1, yoyo: true, ease: rough3 });
+  TweenMax.fromTo(ground[3], 2, { autoAlpha: 0.9, scale: 0.95 }, { autoAlpha: 1, scale: 1, transformOrigin: "center", repeat: -1, yoyo: true, ease: rough1 });
+
+  // Tween characters
+  TweenMax.fromTo(characters[0], 2, { autoAlpha: 1, fill: "hsl(25, 80%, 60%)" }, { autoAlpha: 1, fill: "hsl(45, 100%, 80%)", repeat: -1, yoyo: true, ease: rough1 });
+  TweenMax.fromTo(characters[1], 2, { autoAlpha: 1, fill: "hsl(25, 80%, 60%)" }, { autoAlpha: 1, fill: "hsl(45, 100%, 80%)", repeat: -1, yoyo: true, ease: rough2 });
+
+  // Tween rock faces
+  TweenMax.fromTo(rockFaces[0], 2, { autoAlpha: 0.75 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough4 });
+  TweenMax.fromTo(rockFaces[1], 2, { autoAlpha: 0.75 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough5 });
+  TweenMax.fromTo(rockFaces[2], 2, { autoAlpha: 0.75 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough6 });
+  TweenMax.fromTo(rockFaces[3], 2, { autoAlpha: 0.75 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough4 });
+  TweenMax.fromTo(rockFaces[4], 2, { autoAlpha: 0.75 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough5 });
+
+  // Tween rock highlights
+  TweenMax.fromTo(rockHls[0], 2, { autoAlpha: 0.15 }, { autoAlpha: 0.5, repeat: -1, yoyo: true, ease: rough3 });
+  TweenMax.fromTo(rockHls[1], 2, { autoAlpha: 0.15 }, { autoAlpha: 0.5, repeat: -1, yoyo: true, ease: rough3 });
+  TweenMax.fromTo(rockHls[2], 2, { autoAlpha: 0.15 }, { autoAlpha: 0.5, repeat: -1, yoyo: true, ease: rough3 });
+  TweenMax.fromTo(rockHls[3], 2, { autoAlpha: 0.15 }, { autoAlpha: 0.5, repeat: -1, yoyo: true, ease: rough3 });
+  TweenMax.fromTo(rockHls[4], 2, { autoAlpha: 0.15 }, { autoAlpha: 0.5, repeat: -1, yoyo: true, ease: rough3 });
+
+  // Tween plate highlights
+  TweenMax.fromTo(plates[0], 2, { autoAlpha: 0.35 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough1 });
+  TweenMax.fromTo(plates[1], 2, { autoAlpha: 0.35 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough2 });
+}
+
+function createFlames() {
   var fireplace = document.querySelector("[data-anim=fireplace]");
   var fireGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
-  var count = 60;
+  var flames = config.flames.targets;
+  var count = config.flames.count;
 
   for(var i = 0; i < count; i++) {
     // Create new flame
     var flame = new Flame();
+    // Add to array
+    flames.push(flame);
     // Add flame to group
     flame.appendTo(fireGroup);
-    // Make every 10th flame into sparkle
+    // Make every 10th flame a sparkle
     if (i%10 === 0) flame.isSparkle();
-    // Animate flame
-    flame.animate();
-    // Set unique starting poing of flame
-    flame.tl.progress(1/count*i).play().timeScale(0.75);
   }
 
   fireplace.appendChild(fireGroup);
+
+
+  for(var i = 0; i < flames.length; i++) {
+    // Animate flame
+    flames[i].animate();
+    // Set unique starting poing of flame
+    flames[i].tl.progress(1/count*i);
+  }
 }
 
-function createSpace() {
-  particlesJS.load('space', 'js/config.json');
+
+function animateFlames() {
+
+  var flames = config.flames.targets;
+  
+  for(var i = 0; i < flames.length; i++) {
+
+    flames[i].tl.play();
+  }
 }
 
-// @codekit-prepend "../assets/nerdmanship/js/utility.js";
-// @codekit-prepend "stats.js";
-// @codekit-prepend "planetBryan.js";
+//- @codekit-prepend "config.js";
+//- @codekit-prepend "Flame.js";
+//- @codekit-prepend "svg.js";
+//- @codekit-prepend "space.js";
+//- @codekit-prepend "layout.js";
+//- @codekit-prepend "intro.js";
+//- @codekit-prepend "planet.js";
+//- @codekit-prepend "flicker.js";
+//- @codekit-prepend "bonfire.js";
+
+
+/* INIT */
+
+var initPlanetBryan = function(id) {
+
+  // INSERT PROJECT HERE
+  var container = document.querySelector("#" + id);
+
+  // OPTIONS
+  setConfig();
+
+  // LAYOUT
+  setLayout();
+
+  // SPACE
+  createSpace(container);
+
+  // PLANET
+  createPlanet(container);
+
+  // FIRE
+  createFlames();
+
+  // ANIMATE
+  TweenMax.ticker.fps(config.fps);
+  if(config.flicker) startFlicker();
+  if(config.intro) playIntro();
+  if(config.fire) animateFlames();
+};
+
+// INIT END
+
+//- @codekit-prepend "../assets/nerdmanship/js/utility.js";
+//- @codekit-prepend "../assets/nerdmanship/js/stats.js";
+//- @codekit-prepend "../assets/nerdmanship/js/bowser.min.js";
+//- @codekit-prepend "planetBryan.js";
 
 initPlanetBryan("scene");
+
+// Tweak intro
+// Tweak fire
+// Merge options objects
+// Create device branch
 
