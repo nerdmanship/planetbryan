@@ -1175,11 +1175,11 @@
 	"\/src\/assets\/nerdmanship\/js\/bowser.min.js": {
 		"ft": 64,
 		"mi": 0,
-		"oA": 1,
-		"oAP": "\/dist\/assets\/nerdmanship\/js\/bowser.min.js",
-		"oF": 0,
+		"oA": 2,
+		"oAP": "\/dist\/js\/bowser.min.js",
+		"oF": 3,
 		"sC": 1,
-		"tS": 1
+		"tS": 0
 		},
 	"\/src\/assets\/nerdmanship\/js\/controls.js": {
 		"ft": 64,
@@ -1365,7 +1365,7 @@
 		"oAP": "\/dist\/js\/index.js",
 		"oF": 0,
 		"sC": 1,
-		"tS": 0
+		"tS": 1
 		},
 	"\/src\/js\/intro.js": {
 		"ft": 64,
@@ -1490,7 +1490,7 @@
 	"displayValue": "template",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "meme-girlfriend",
-	"lastBuiltDate": 520645933
+	"lastBuiltDate": 520866653
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,

@@ -49,9 +49,9 @@ var config = {
 // Make changes on default
 function setConfig() {
 
-  var performance = getClientPerformance();
+  var mode = getClientPerformance();
 
-  if (performance === "incapable") {
+  if (mode === "off") {
 
     config.particles.number.value = 500;
     config.particles.move.enable = false;
@@ -64,7 +64,7 @@ function setConfig() {
     config.fps = 15;
   }
 
-  else if (performance === "limited") {
+  else if (mode === "minimal") {
 
     config.particles.number.value = 100;
     config.particles.move.enable = false;
@@ -78,8 +78,7 @@ function setConfig() {
 
   }
 
-  else if (performance === "capable") {
-    console.log("log");
+  else if (mode === "limited") {
     config.particles.number.value = 500;
     config.particles.move.enable = false;
     config.flames.count = 50;
@@ -107,18 +106,36 @@ function getClientPerformance() {
 
   // Make bundle
   var mostHandheld = (bowser.mobile || bowser.tablet) && !(iPhone6);
-  
-  // Verdict
-  var incapable = bowser.windowsphone || bowser.samsungBrowser || bowser.tizen;
-  var limited = mostHandheld;
-  var capable = iPhone6 || bowser.firefox || bowser.safari || bowser.chrome;
-  
-  if (incapable) {
-    return "incapable";
-  } else if (limited) {
+
+  var modes = {
+    off: {
+      enabled: false,
+      rules: [bowser.windowsphone, bowser.samsungBrowser, bowser.tizen]
+    },
+    minimal: {
+      enabled: false,
+      rules: [mostHandheld]
+    }, 
+    limited: {
+      enabled: false,
+      rules: [iPhone6, bowser.firefox, bowser.safari]
+    }
+  };
+
+for (var mode in modes) {
+  for (var i = 0; i < modes[mode].rules.length; i++) {
+    if (modes[mode].rules[i]) modes[mode].enabled = true;
+  }
+}
+
+
+
+  if (modes["off"].enabled) {
+    return "off";
+  } else if (modes["minimal"].enabled) {
+    return "minimal";
+  } else if (modes["limited"].enabled) {
     return "limited";
-  } else if (capable) {
-    return "capable";
   } else {
     return "performant";    
   }

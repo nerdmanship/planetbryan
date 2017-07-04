@@ -6,6 +6,7 @@ class Flame {
     this.target.setAttribute("width", side);
     this.target.setAttribute("height", side);
     this.target.setAttribute("fill", "red");
+
   }
 
   appendTo(parent) {
@@ -18,7 +19,7 @@ class Flame {
 
   animate() {
     var f = this.target;
-
+    
     // Flame settings
     var totTime = spread(12,2);
     var timeX = [spread(1, 0.1), spread(1, 0.2), spread(1, 0.5)];

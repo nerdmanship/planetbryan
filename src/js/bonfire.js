@@ -28,7 +28,6 @@ function createFlames() {
 
 
 function animateFlames() {
-
   var flames = config.flames.targets;
   
   for(var i = 0; i < flames.length; i++) {
