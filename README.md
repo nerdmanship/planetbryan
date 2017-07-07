@@ -42,6 +42,17 @@ window.addEventListener("load", initPlanetBryan("myDiv"));
 ## `Specify client browser rules`
 Add your own rules in the `getMode()` function at line ~160 in planetbryan.js
 
+|  | Default | Limited |  Minimal |  Off |  
+| ---- | ---- | ---- | ---- | ---- |
+| **flames.anim** | true | - | - | false |
+| **flames.count** | 60 | 40 | 30 | 100 |
+| **flames.reflection** | true | - | false | - |
+| **flames.smoke** | 0.05 | 0 | 0 | - |
+| **intro** | true | false | false | false |
+| **flicker** | true | - | false | false |
+| **fps** | 30 | - | 15 | - |
+
+
 ## Tech spec
 * Size: X Kb including dependencies
 * FPS: X
