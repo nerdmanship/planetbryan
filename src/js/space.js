@@ -1,4 +1,9 @@
-// SPACE
+/* 
+
+CREATE SPACE
+
+*/
+
 function createSpace(container) {
   // Create and insert #space
   var spaceWrapper = document.createElement("div");
@@ -7,3 +12,9 @@ function createSpace(container) {
   // Init particles
   particlesJS('space', config);
 }
+
+/* 
+
+CREATE SPACE END
+
+*/

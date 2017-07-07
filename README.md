@@ -1,85 +1,52 @@
-# Title
+# Planet Bryan Animation
 
 ![Picture](https://carrrs.com/wp-content/uploads/2015/04/placeholder-1000x400.png "Placeholder")
 
-#### [Click to launch demo](#) or [live site](#)
-
-## What is this?
-
-This is...
-
-## Purpose of the project
-
-The purpose is to achieve...
-
-## Biggest challenge
-
-The tricky thing was...
+#### [Click to launch demo](https://nerdmanship.github.io/planetbryan/dist/) or [live site](https://planetbryan.com)
 
 ## `Usage`
 
-[Right click here](https://github.com/nerdmanship/WeCon/raw/master/dist/js/weconLogoAnimation.min.js) and choose *'Save link as...'* to download the script to your /js directory.
+Download dependencies to your /css or /js directory respectively.
+Right click and choose *'Save link as...'*
+
+* [particles.min.js](#)
+* [TweenMax.min.js](#)
+* [bowser.min.js](#)
+* [planetbryan.js](#)
+* [planetbryan.css](#)
 
 **index.html**
 
 ```html
-<!-- Create a container for the animation -->
-<div id="animation"></div>
+<!-- Load styles in the page head -->
+<link rel="stylesheet" type="text/css" href="css/planetbryan.css"/>
 
-<!-- Load the script at end of body -->
-<script type="text/javascript" src="script.js"></script>
+<!-- Create a container for the animation -->
+<div id="myDiv"></div>
+
+<!-- Load scripts at end of body -->
+<script type="text/javascript" src="particles.min.js"></script>
+<script type="text/javascript" src="TweenMax.min.js"></script>
+<script type="text/javascript" src="bowser.min.js"></script>
+<script type="text/javascript" src="planetbryan.js"></script>
 
 ```
-
+  
 **index.js**
 
 ```js
 // Call the initialising function at page load and pass the ID of the container
-window.addEventListener("load", startAnimation("wrapper"));
+window.addEventListener("load", initPlanetbryan("myDiv"));
 ```
 
-**styles.css**
-
-```css
-/* Style the container as a normal div */
-#wrapper {
-  /* Styles */
-}
-```
-
-## `Options`
-
-**index.js**
-
-```js
-// You may pass an options object as a second argument
-window.addEventListener("load", startAnimation("wrapper", { key: value, key: value }));
-```
-
-| Key | Comment | Example |
-| - | - | - |
-| delay | seconds | 5 |
-| repeat | -1 is infinite | 3 |
-
-## Dependencies
-(Included in script.min.js)
-* GSAP TweenMax
-* GSAP MorphSVGPlugin
-* GSAP DrawSVGPlugin
+## `Specify client browser rules`
+Add your own rules in the `getMode()` function at line ~160 in planetbryan.js
 
 ## Tech spec
 * Size: X Kb including dependencies
 * FPS: X
 * Compatibility: All modern browsers
 
-## Added value
-
-This animation was also exported as...
-
-## Delivery
-
-#### [Click to download delivery package](https://www.dropbox.com/s/1kez3hpt3biqs97/wecon_delivery.zip?dl=1)
-(Files are encrypted and password protected)
 
 ## Follow Nerdmanship
 * [Facebook](http://www.facebook.com/nerdmanship)

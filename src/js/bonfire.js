@@ -1,3 +1,10 @@
+/* 
+
+BONFIRE ANIMATION
+
+*/
+
+
 function createFlames() {
   var fireplace = document.querySelector("[data-anim=fireplace]");
   var fireGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
@@ -32,6 +39,12 @@ function animateFlames() {
   
   for(var i = 0; i < flames.length; i++) {
 
-    flames[i].tl.play();
+    flames[i].tl.play().timeScale(0.65);
   }
 }
+
+/* 
+
+BONFIRE ANIMATION END
+
+*/

@@ -1,3 +1,9 @@
+/* 
+
+FLICKER ANIMATION
+
+*/
+
 function startFlicker() {
   
   // Cache DOM
@@ -46,3 +52,9 @@ function startFlicker() {
   TweenMax.fromTo(plates[0], 2, { autoAlpha: 0.35 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough1 });
   TweenMax.fromTo(plates[1], 2, { autoAlpha: 0.35 }, { autoAlpha: 1, repeat: -1, yoyo: true, ease: rough2 });
 }
+
+/* 
+
+FLICKER ANIMATION END
+
+*/

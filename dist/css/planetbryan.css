@@ -1,20 +1,11 @@
-#controls {
-  position: absolute;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 30px; }
-
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background: #02090c;
   background: -webkit-linear-gradient(top, #02090c 0%, #011c28 100%);
-  background: linear-gradient(to bottom, #02090c 0%, #011c28 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02090c', endColorstr='#011c28',GradientType=0 ); }
+  background: linear-gradient(to bottom, #02090c 0%, #011c28 100%); }
 
 #space {
   position: absolute;

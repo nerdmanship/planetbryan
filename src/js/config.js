@@ -11,14 +11,15 @@ var config = {
     "scale": 4,
   },
   "flames": {
-    "count": 70,
+    "anim": true,
+    "count": 60,
     "targets": [],
-    "height": 100,
-    "reflection": true
+    "height": 30,
+    "reflection": true,
+    "smoke": 0.05
   },
   "flicker": true,
   "intro": true,
-  "fire": true,
   "fps": 30,
   "particles": {
     "number": { "value": 500 },
@@ -34,113 +35,99 @@ var config = {
     },
     "line_linked": { "enable": false },
     "move": {
-      "enable": true,
-      "speed": 0.3,
-      "direction": "right",
-      "random": true,
-      "straight": true,
-      "out_mode": "out"
+      "enable": false
     }
   },
-  "retina_detect": true
+  "retina_detect": true,
+  "displayData": true
 };
 
 
-// Make changes on default
+// Make changes to default config
 function setConfig() {
 
-  var mode = getClientPerformance();
+  var mode = getMode();
 
   if (mode === "off") {
-
-    config.particles.number.value = 500;
-    config.particles.move.enable = false;
-    config.flames.count = 30;
-    config.flames.height = 130;
-    config.flames.reflection = false;
-    config.flicker = false;
+    if (config.displayData) displayData("Off");
+    config.flames.anim = false;
+    config.flames.count = 100;
     config.intro = false;
-    config.fire = false;
-    config.fps = 15;
+    config.flicker = false;
   }
 
   else if (mode === "minimal") {
-
-    config.particles.number.value = 100;
-    config.particles.move.enable = false;
+    if (config.displayData) displayData("Minimal");
     config.flames.count = 30;
-    config.flames.height = 130;
-    config.flames.reflection = false;
     config.flicker = false;
+    config.flames.reflection = false;
     config.intro = false;
-    config.fire = true;
     config.fps = 15;
-
+    config.flames.smoke = 0;
   }
 
   else if (mode === "limited") {
-    config.particles.number.value = 500;
-    config.particles.move.enable = false;
-    config.flames.count = 50;
-    config.flames.height = 120;
-
-    config.flames.reflection = true;
-    config.flicker = true;
-    config.intro = true;
-    config.fire = true;
-    config.fps = 30;
-
+    if (config.displayData) displayData("Limited");
+    config.intro = false;
+    config.flames.count = 40;
+    config.flames.smoke = 0;
   }
 
 }
 
-function getClientPerformance() {
+// Checks the client browser and returns an animation mode based on its capacity
+function getMode() {
 
-  // BROWSERS: chrome, firefox, msie, msedge, safari, android, ios
-  // DEVICES: mobile, tablet
-  // OS: mac, windows, windowsphone, chromeos, android, ios, webos
+// SPECIFY RULES
+
+  // BROWSERS: chrome, firefox, msie, msedge, safari, android, ios, more...
+  // DEVICES: mobile, tablet, more...
+  // OS: mac, windows, windowsphone, chromeos, android, ios, webos, more...
   // Full list of flags: https://github.com/lancedikson/bowser
 
-  // Target specific device
-  var iPhone6 = bowser.ios && bowser.mobile && window.innerWidth > 375;
+  
+  // EXAMPLE: Creating a bundle rule
+  var sketchyBrowsers = bowser.msie || bowser.msedge;
 
-  // Make bundle
-  var mostHandheld = (bowser.mobile || bowser.tablet) && !(iPhone6);
+  // EXAMPLE: Creating custom rules
+  // Target specific devices by filtering out its specific properties
+  var newIphones = bowser.ios && bowser.mobile && window.innerWidth > 320; // iPhone 6 & 7
+  var newIpads = bowser.tablet && bowser.ios && window.innerWidth > 768; // iPad Pro
+  // Create a rule for all handheld
+  var allHandheld = bowser.tablet || bowser.mobile;
+  // Create a rule for all exceptions
+  var exceptionsHandheld = newIpads || newIphones; // Add i.e. new MS Surface here...
+  // Filter out the exceptions from the larger group
+  var mostHandheld = (allHandheld) && !(exceptionsHandheld);
+  // Use mostHandheld and exceptionsHandheld as rules
+  
+  
 
+  // Add rule to the array of the mode you want it to enable
   var modes = {
-    off: {
-      enabled: false,
-      rules: [bowser.windowsphone, bowser.samsungBrowser, bowser.tizen]
-    },
-    minimal: {
-      enabled: false,
-      rules: [mostHandheld]
-    }, 
-    limited: {
-      enabled: false,
-      rules: [iPhone6, bowser.firefox, bowser.safari]
-    }
+    off: [bowser.windowsphone, bowser.samsungBrowser, bowser.tizen],
+    minimal: [mostHandheld, sketchyBrowsers], 
+    limited: [exceptionsHandheld, bowser.firefox, bowser.safari],
+    default: [bowser.chrome]
   };
 
-for (var mode in modes) {
-  for (var i = 0; i < modes[mode].rules.length; i++) {
-    if (modes[mode].rules[i]) modes[mode].enabled = true;
+// CHECK RULES TO RETURN A MODE
+
+  // Iterate over each mode in modes
+  for (var mode in modes) {
+    
+    var rules = modes[mode];
+    var i;
+    var len = rules.length;
+    for (i = 0; i < len; i++) {
+      // Check if any rule in the rules array is true
+      // Return the mode of the FIRST rule to be true
+      if (rules[i]) return mode;
+    }
+
   }
 }
 
-
-
-  if (modes["off"].enabled) {
-    return "off";
-  } else if (modes["minimal"].enabled) {
-    return "minimal";
-  } else if (modes["limited"].enabled) {
-    return "limited";
-  } else {
-    return "performant";    
-  }
-
-}
 
 /* 
 

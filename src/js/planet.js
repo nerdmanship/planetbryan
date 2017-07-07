@@ -1,3 +1,10 @@
+/* 
+
+CREATE PLANET
+
+*/
+
+
 function createPlanet(container) {
     // Create and insert #planet-wrapper
   var planetWrapper = document.createElement("div");
@@ -5,8 +12,15 @@ function createPlanet(container) {
   container.appendChild(planetWrapper);
 
   // Append SVG in #planet-wrapper
+  var svg = getSVG();
   planetWrapper.insertAdjacentHTML("beforeend", svg);
 
   var planetBody = document.querySelector("[data-anim=planetBody]");
   TweenMax.set(planetBody, { y: config.planet.y, x: config.planet.x, rotation: 2, scale: config.planet.scale, transformOrigin: "center" });
 }
+
+/* 
+
+CREATE PLANET END
+
+*/

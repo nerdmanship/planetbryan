@@ -41,6 +41,23 @@ function spread(value, offset) {
   return min + Math.random() * (max - min);
 }
 
+// Display data on screen in development
+function displayData(data) {
+  
+  // Grab the div
+  var dataDiv = document.querySelector("#data");
+
+  // Create one if there isn't one already
+  if (!dataDiv) {
+    dataDiv = document.createElement("div");
+    dataDiv.id = "data";
+    dataDiv.style = "margin-left: 100px; color: white;";
+    document.body.appendChild(dataDiv);
+  }
+  
+  // Append the new data
+  dataDiv.innerHTML = dataDiv.innerHTML + "<br/>" + data;
+}
 /* 
 
 UTILITY LIBRARY END

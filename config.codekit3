@@ -1358,6 +1358,15 @@
 		"sC": 1,
 		"tS": 1
 		},
+	"\/src\/js\/getSvg.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/dist\/js\/getSvg.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 1
+		},
 	"\/src\/js\/index.js": {
 		"ft": 64,
 		"mi": 0,
@@ -1406,7 +1415,7 @@
 	"\/src\/js\/planetBryan.js": {
 		"ft": 64,
 		"mi": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/dist\/js\/planetBryan.js",
 		"oF": 0,
 		"sC": 1,
@@ -1420,15 +1429,6 @@
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
-		},
-	"\/src\/js\/svg.js": {
-		"ft": 64,
-		"mi": 0,
-		"oA": 1,
-		"oAP": "\/dist\/js\/svg.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 1
 		},
 	"\/src\/pug\/content.pug": {
 		"cOD": 1,
@@ -1475,7 +1475,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/dist\/css\/index.css",
+		"oAP": "\/dist\/css\/planetbryan.css",
 		"oF": 2,
 		"oS": 0,
 		"uL": 1
@@ -1490,7 +1490,7 @@
 	"displayValue": "template",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "meme-girlfriend",
-	"lastBuiltDate": 520866653
+	"lastBuiltDate": 521117903
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
