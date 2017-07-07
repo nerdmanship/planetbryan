@@ -1,6 +1,6 @@
 # Planet Bryan Animation
 
-![Picture](https://carrrs.com/wp-content/uploads/2015/04/placeholder-1000x400.png "Placeholder")
+![Picture](https://snag.gy/YkQ8Uy.jpg "Planet Bryan")
 
 #### [Click to launch demo](https://nerdmanship.github.io/planetbryan/dist/) or [live site](https://planetbryan.com)
 
@@ -9,11 +9,11 @@
 Download dependencies to your /css or /js directory respectively.
 Right click and choose *'Save link as...'*
 
-* [particles.min.js](#)
-* [TweenMax.min.js](#)
-* [bowser.min.js](#)
-* [planetbryan.js](#)
-* [planetbryan.css](#)
+* [particles.min.js](https://github.com/nerdmanship/planetbryan/raw/master/dist/js/particles.min.js)
+* [TweenMax.min.js](https://github.com/nerdmanship/planetbryan/raw/master/dist/js/TweenMax.min.js)
+* [bowser.min.js](https://github.com/nerdmanship/planetbryan/raw/master/dist/js/bowser.min.js)
+* [planetbryan.js](https://github.com/nerdmanship/planetbryan/raw/master/dist/js/planetbryan.js)
+* [planetbryan.css](https://github.com/nerdmanship/planetbryan/raw/master/dist/css/planetbryan.css)
 
 **index.html**
 
