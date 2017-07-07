@@ -1416,8 +1416,8 @@
 		"ft": 64,
 		"mi": 0,
 		"oA": 0,
-		"oAP": "\/dist\/js\/planetBryan.js",
-		"oF": 0,
+		"oAP": "\/dist\/js\/planetbryan.js",
+		"oF": 2,
 		"sC": 1,
 		"tS": 1
 		},
@@ -1490,7 +1490,7 @@
 	"displayValue": "template",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "meme-girlfriend",
-	"lastBuiltDate": 521117903
+	"lastBuiltDate": 521118742
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
