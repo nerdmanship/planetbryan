@@ -12,7 +12,7 @@ Right click and choose *'Save link as...'*
 * [particles.min.js](#)
 * [TweenMax.min.js](#)
 * [bowser.min.js](#)
-* [planetBryan.js](#)
+* [planetbryan.js](#)
 * [planetbryan.css](#)
 
 **index.html**
@@ -28,7 +28,7 @@ Right click and choose *'Save link as...'*
 <script type="text/javascript" src="particles.min.js"></script>
 <script type="text/javascript" src="TweenMax.min.js"></script>
 <script type="text/javascript" src="bowser.min.js"></script>
-<script type="text/javascript" src="planetBryan.js"></script>
+<script type="text/javascript" src="planetbryan.js"></script>
 
 ```
   
@@ -36,7 +36,7 @@ Right click and choose *'Save link as...'*
 
 ```js
 // Call the initialising function at page load and pass the ID of the container
-window.addEventListener("load", initPlanetbryan("myDiv"));
+window.addEventListener("load", initPlanetBryan("myDiv"));
 ```
 
 ## `Specify client browser rules`
