@@ -39,7 +39,7 @@ var config = {
     }
   },
   "retina_detect": true,
-  "displayData": true
+  "displayData": false
 };
 
 
